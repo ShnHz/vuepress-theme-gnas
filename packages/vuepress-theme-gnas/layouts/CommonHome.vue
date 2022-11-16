@@ -20,7 +20,8 @@
             <BlogList />
 
             <aside>
-                <AuthorInfo v-if="$site.themeConfig.authorConfig.enable" />
+                <AuthorInfo v-if="$site.themeConfig.home.authorConfig.enable" />
+                <LoveInfo v-if="$site.themeConfig.home.loveConfig.enable" />
             </aside>
         </main>
     </div>
@@ -28,11 +29,13 @@
 <script>
 import BlogList from '@theme/components/home/BlogList'
 import AuthorInfo from '@theme/components/home/AuthorInfo'
+import LoveInfo from '@theme/components/home/LoveInfo'
 
 export default {
     components: {
         BlogList,
-        AuthorInfo
+        AuthorInfo,
+        LoveInfo
     },
     props: {
         bannerImg: {
@@ -46,10 +49,9 @@ export default {
         }
     },
     computed: {
-        
+
     },
     mounted() {
-        console.log(this.$blogList)
     }
 }
 </script>
@@ -128,6 +130,9 @@ export default {
             main{
                 width: 100%;
                 flex-direction: column;
+                .blog-list-wrap{
+                    width 100%
+                }
                 aside{
                     order: -1;
                     width 100%;

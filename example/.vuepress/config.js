@@ -6,11 +6,11 @@ module.exports = {
         // blog文章所在位置
         blogBase: '/views/blog',
         // blogItem配置
-        blogItemCofig:{
+        blogItemCofig: {
             // 日期格式化
-            dateFormat:'MM dd,yyyy'
+            dateFormat: 'MM dd,yyyy'
         },
-        
+
         logo: '/img/logo.png',
         home: {
             titleLogo: '/img/titleLogo.gif',
@@ -22,24 +22,31 @@ module.exports = {
                 'https://cdn.chenyingshuang.cn/index/bg2.jpg',
                 'https://cdn.chenyingshuang.cn/index/bg3.jpg',
             ],
+            authorConfig: {
+                enable: true,
+                avatar: '/img/avatar.jpg',
+                bookmark: true,
+                github: 'https://github.com/ShnHz',
+                qq: 123456789,
+                wx: '123456789',
+                email: '123456789@qq.com',
+                alipay: '/img/alipay_ercode.jpg'
+            },
+            loveConfig:{
+                enable: true,
+                boy:'/img/boy.jpg',
+                girl:'/img/girl.jpg',
+                startDay:'2019/06/29'
+            }
         },
         // 备案号
         record: '浙ICP备00000000号-0',
         recordLink: 'http://beian.miit.gov.cn/',
 
         // 作者
-        author: 'Shn',
-        authorConfig:{
-            enable:true,
-            name:'野宁新之助',
-            avatar:'/img/avatar.jpg',
-            bookmark:true,
-            github:'https://github.com/ShnHz',
-            qq:123456789,
-            wx:'123456789',
-            email:'123456789@qq.com',
-            alipay:'/img/alipay_ercode.jpg'
-        },
+        author: '野宁新之助',
+
+
         // 项目开始时间
         startYear: '2022',
 

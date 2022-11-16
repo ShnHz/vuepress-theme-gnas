@@ -1,8 +1,8 @@
 <template>
     <div class="author-info-wrap">
         <div class="avatar-info">
-            <img :src="$site.themeConfig.authorConfig.avatar" />
-            <p>{{$site.themeConfig.authorConfig.name}}</p>
+            <img :src="$site.themeConfig.home.authorConfig.avatar" />
+            <p>{{$site.themeConfig.author}}</p>
         </div>
         <div class="data-info">
             <div @click="$router.push('/blog/Archives.html')" class="data-info-item">
@@ -14,18 +14,18 @@
                 <p class="data-info-item-data">{{ $tagList.length }}</p>
             </div>
         </div>
-        <div @click="addBookMark" class="add-bookmark" v-if="$site.themeConfig.authorConfig.bookmark">
+        <div @click="addBookMark" class="add-bookmark" v-if="$site.themeConfig.home.authorConfig.bookmark">
             <i class="el-icon-s-flag"></i>
             加入书签
         </div>
         <div class="social-info">
-            <a :href="$site.themeConfig.authorConfig.github" v-if="$site.themeConfig.authorConfig.github">
+            <a :href="$site.themeConfig.home.authorConfig.github" v-if="$site.themeConfig.home.authorConfig.github">
                 <i class="gnas-i gnas-i-github-fill"></i>
             </a>
-            <i @click="openAlipay" class="gnas-i gnas-i-alipay" v-if="$site.themeConfig.authorConfig.alipay"></i>
-            <i @click="openQQ" class="gnas-i gnas-i-QQ-circle-fill" v-if="$site.themeConfig.authorConfig.qq"></i>
-            <i @click="openWechat" class="gnas-i gnas-i-wechat-fill" v-if="$site.themeConfig.authorConfig.wx"></i>
-            <a :href="`mailto:${$site.themeConfig.authorConfig.email}`" v-if="$site.themeConfig.authorConfig.email">
+            <i @click="openAlipay" class="gnas-i gnas-i-alipay" v-if="$site.themeConfig.home.authorConfig.alipay"></i>
+            <i @click="openQQ" class="gnas-i gnas-i-QQ-circle-fill" v-if="$site.themeConfig.home.authorConfig.qq"></i>
+            <i @click="openWechat" class="gnas-i gnas-i-wechat-fill" v-if="$site.themeConfig.home.authorConfig.wx"></i>
+            <a :href="`mailto:${$site.themeConfig.home.authorConfig.email}`" v-if="$site.themeConfig.home.authorConfig.email">
                 <i class="gnas-i gnas-i-email"></i>
             </a>
         </div>
@@ -52,7 +52,7 @@ export default {
          */
         openQQ() {
             this.$notify({
-                message: `QQ号：${this.$site.themeConfig.authorConfig.qq}`,
+                message: `QQ号：${this.$site.themeConfig.home.authorConfig.qq}`,
                 position: 'bottom-right',
                 showClose: true,
                 duration: 0,
@@ -64,7 +64,7 @@ export default {
          */
         openWechat() {
             this.$notify({
-                message: `微信号：${this.$site.themeConfig.authorConfig.wx}`,
+                message: `微信号：${this.$site.themeConfig.home.authorConfig.wx}`,
                 position: 'bottom-right',
                 showClose: true,
                 duration: 0,
@@ -80,7 +80,7 @@ export default {
                 position: 'bottom-right',
                 dangerouslyUseHTMLString: true,
                 message:
-                    `<img src="${this.$site.themeConfig.authorConfig.alipay}" style="width:200px"/>`,
+                    `<img src="${this.$site.themeConfig.home.authorConfig.alipay}" style="width:200px"/>`,
                 duration: 0,
                 customClass: 'ercode-notify',
             })
