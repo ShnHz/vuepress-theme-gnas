@@ -1,0 +1,100 @@
+{
+  "id": "1759409",
+  "name": "gnas",
+  "font_family": "gnas-i",
+  "css_prefix_text": "gnas-i-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16618186",
+      "name": "eye",
+      "font_class": "eye",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "11349144",
+      "name": "love",
+      "font_class": "love",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "4936991",
+      "name": "wechat-fill",
+      "font_class": "wechat-fill",
+      "unicode": "e883",
+      "unicode_decimal": 59523
+    },
+    {
+      "icon_id": "4937000",
+      "name": "github-fill",
+      "font_class": "github-fill",
+      "unicode": "e885",
+      "unicode_decimal": 59525
+    },
+    {
+      "icon_id": "4937004",
+      "name": "QQ-circle-fill",
+      "font_class": "QQ-circle-fill",
+      "unicode": "e887",
+      "unicode_decimal": 59527
+    },
+    {
+      "icon_id": "9096739",
+      "name": "alipay",
+      "font_class": "alipay",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "14401694",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "490372",
+      "name": "movie",
+      "font_class": "movie",
+      "unicode": "ec4c",
+      "unicode_decimal": 60492
+    },
+    {
+      "icon_id": "19100345",
+      "name": "tool",
+      "font_class": "tool",
+      "unicode": "e65d",
+      "unicode_decimal": 58973
+    },
+    {
+      "icon_id": "4936680",
+      "name": "pushpin-fill",
+      "font_class": "pushpin-fill",
+      "unicode": "e86d",
+      "unicode_decimal": 59501
+    },
+    {
+      "icon_id": "490375",
+      "name": "music_note",
+      "font_class": "musicnote",
+      "unicode": "ec4f",
+      "unicode_decimal": 60495
+    },
+    {
+      "icon_id": "3402343",
+      "name": "月亮",
+      "font_class": "yueliang",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "5296051",
+      "name": "太阳",
+      "font_class": "taiyang",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+@media screen and (max-width: 900px) {
+    .content__default {
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .home {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .blog {
+        .theme-default-content {
+            >iframe.bilibili {
+                width: 100%;
+                height: 200px !important;
+            }
+            >iframe.qqmusic {
+                width: 100%;
+                height: 200px !important;
+            }
+        }
+    }
+
+    // 评论模块
+    .v .emoji, .v .vemoji{
+        width :22px;
+    }
+
+    // live2d
+    .global-ui{
+        #live2d-widget{
+            width: 77.5px !important;
+            height: 150px !important;
+            left: -18px !important;
+        }
+    }
+}

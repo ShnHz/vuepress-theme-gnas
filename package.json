@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "dev": "vuepress dev example",
+    "build:example": "vuepress build example"
+  },
+  "devDependencies": {
+    "async-validator": "^4.2.5",
+    "element-ui": "^2.15.12",
+    "loadsh": "^0.0.4",
+    "valine": "^1.5.1",
+    "vue-highlightjs": "^1.3.3",
+    "vuepress": "^1.9.7",
+    "vuepress-plugin-helper-live2d": "^1.0.2"
+  }
+}

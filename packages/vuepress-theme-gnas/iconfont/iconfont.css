@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "gnas-i"; /* Project id 1759409 */
+  src: url('iconfont.woff2?t=1668651892185') format('woff2'),
+       url('iconfont.woff?t=1668651892185') format('woff'),
+       url('iconfont.ttf?t=1668651892185') format('truetype');
+}
+
+.gnas-i {
+  font-family: "gnas-i" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gnas-i-eye:before {
+  content: "\e6ac";
+}
+
+.gnas-i-love:before {
+  content: "\e642";
+}
+
+.gnas-i-wechat-fill:before {
+  content: "\e883";
+}
+
+.gnas-i-github-fill:before {
+  content: "\e885";
+}
+
+.gnas-i-QQ-circle-fill:before {
+  content: "\e887";
+}
+
+.gnas-i-alipay:before {
+  content: "\e666";
+}
+
+.gnas-i-email:before {
+  content: "\e668";
+}
+
+.gnas-i-movie:before {
+  content: "\ec4c";
+}
+
+.gnas-i-tool:before {
+  content: "\e65d";
+}
+
+.gnas-i-pushpin-fill:before {
+  content: "\e86d";
+}
+
+.gnas-i-musicnote:before {
+  content: "\ec4f";
+}
+
+.gnas-i-yueliang:before {
+  content: "\e6b8";
+}
+
+.gnas-i-taiyang:before {
+  content: "\e600";
+}
+
