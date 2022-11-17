@@ -4,7 +4,8 @@
 
     <Content class="theme-default-content" />
 
-    <Valine v-if="$site.themeConfig.valine.enable"/>
+    <Valine
+      v-if="$site.themeConfig.valine.enable && (!$page.frontmatter || !$page.frontmatter.config || $page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.valine)" />
     <!-- <BlogDirectory v-if="blogDirectoryVisible" /> -->
 
     <PageEdit />
@@ -56,7 +57,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 $wrapper
   max-width $contentWidth

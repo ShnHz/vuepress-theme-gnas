@@ -24,7 +24,7 @@ export default {
     },
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .gnas-tag {
     --color: #3eaf7c;
     &.gnas-tag-top,&.gnas-tag-git{

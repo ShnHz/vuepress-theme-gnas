@@ -50,6 +50,7 @@ export default {
                     'sidebar-open': this.isSidebarOpen,
                     'no-sidebar': !this.shouldShowSidebar,
                     'index': this.$page.frontmatter.home,
+                    'friend': this.$page.frontmatter.friend,
                     'blog':this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
                 },
                 userPageClass,

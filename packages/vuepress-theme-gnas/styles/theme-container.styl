@@ -13,11 +13,9 @@
 
 // friend
 .theme-container.friend {
-    .theme-default-content {
-        width: 100%;
-        padding: 0;
-        background: #F4F4F4;
-    }
+    width: 100%;
+    padding: 0;
+    background: #F4F4F4;
 
     .page-edit {
         display: none;
@@ -141,7 +139,7 @@
 }
 
 // blog
-.blog {
+.theme-container.blog {
     .theme-default-content {
         position: relative;
         max-width: 800px !important;
@@ -296,7 +294,7 @@
 
 // 创建blog页面
 .blog-create {
-    @extend .blog;
+    @extend .theme-container.blog;
     height: auto !important;
     background: #F4F4F4;
 
@@ -309,7 +307,7 @@
 
 // blog 带目录
 .blog-catalog {
-    @extend .blog;
+    @extend .theme-container.blog;
 
     .page {
         display: flex;
@@ -341,7 +339,7 @@
 
 // interview 带目录
 .blog-catalog-interview {
-    @extend .blog;
+    @extend .theme-container.blog;
 
     .blog-directory {
         position: fixed !important;

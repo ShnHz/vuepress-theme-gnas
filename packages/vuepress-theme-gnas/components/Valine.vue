@@ -35,7 +35,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">\
+<style lang="stylus">
 .leancloud_visitors{
   .leancloud-visitors-count{
     font-size 16px

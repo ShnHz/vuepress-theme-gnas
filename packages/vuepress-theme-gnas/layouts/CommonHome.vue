@@ -61,7 +61,7 @@ export default {
     }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 .home-wrap {
     min-height: 100vh;
 

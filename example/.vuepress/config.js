@@ -92,20 +92,14 @@ module.exports = {
             },
             {
                 text: '友链',
-                link: '/views/friend/'
+                link: '/views/Friend'
             },
             {
                 text: 'GitHub',
                 link: 'https://github.com/ShnHz/vuepress-theme-gnas'
             }
         ],
-        friendLink: [{
-            "name": "野宁新之助",
-            "href": "https://www.sanghangning.cn",
-            "icon": "https://cdn.chenyingshuang.cn/index/avatar.jpg",
-            "description": "说说我的生活"
-        }],
-
+    
         lastUpdated: 'Last Updated' // 文档更新时间：每个文件git最后提交的时间
     }
 }

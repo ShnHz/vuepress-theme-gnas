@@ -31,7 +31,7 @@ export default {
     }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
   .footer-wrap {
     position: relative;
     background: rgb(0, 0, 0);
