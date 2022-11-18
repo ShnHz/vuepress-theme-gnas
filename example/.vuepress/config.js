@@ -100,6 +100,47 @@ module.exports = {
             }
         ],
     
-        lastUpdated: 'Last Updated' // 文档更新时间：每个文件git最后提交的时间
+        lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
+        tagList:[{
+            "name": "test",
+            "type": "test"
+        }, {
+            "name": "vue",
+            "type": "vue"
+        }, {
+            "name": "css",
+            "type": "css"
+        }, {
+            "name": "javascript",
+            "type": "js"
+        }, {
+            "name": "小程序",
+            "type": "applets"
+        }, {
+            "name": "vuepress",
+            "type": "vuepress"
+        }, {
+            "name": "转",
+            "type": "info"
+        }, {
+            "name": "music",
+            "type": "music",
+            "icon": "gnas-i gnas-i-musicnote"
+        }, {
+            "name": "奇闻异事",
+            "type": "anecdote"
+        }, {
+            "name": "movie",
+            "type": "movie",
+        }, {
+            "name": "git",
+            "type": "git"
+        }, {
+            "name": "工具",
+            "type": "tool"
+        }, {
+            "name": "算法",
+            "type": "algorithm"
+        }]
     }
 }

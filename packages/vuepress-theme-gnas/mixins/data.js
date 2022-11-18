@@ -9,47 +9,7 @@ export default {
             return list
         },
         $tagList() {
-            return [{
-                "name": "test",
-                "type": "test"
-            }, {
-                "name": "vue",
-                "type": "vue"
-            }, {
-                "name": "css",
-                "type": "css"
-            }, {
-                "name": "javascript",
-                "type": "js"
-            }, {
-                "name": "小程序",
-                "type": "applets"
-            }, {
-                "name": "vuepress",
-                "type": "vuepress"
-            }, {
-                "name": "转",
-                "type": "info"
-            }, {
-                "name": "music",
-                "type": "music",
-                "icon": "gnas-i gnas-i-musicnote"
-            }, {
-                "name": "奇闻异事",
-                "type": "anecdote"
-            }, {
-                "name": "movie",
-                "type": "movie",
-            }, {
-                "name": "git",
-                "type": "git"
-            }, {
-                "name": "工具",
-                "type": "tool"
-            }, {
-                "name": "算法",
-                "type": "algorithm"
-            }]
+            return this.$site.themeConfig.tagList
         }
     },
     methods: {
@@ -63,6 +23,11 @@ export default {
                     "name": item,
                     "type": item
                 }
+            })
+        },
+        $blogFromTag(type){
+            return type == 'all' ? this.$blogList : this.$blogList.filter(item =>{
+                return item.frontmatter.config.tag.includes(type) || false
             })
         }
     }

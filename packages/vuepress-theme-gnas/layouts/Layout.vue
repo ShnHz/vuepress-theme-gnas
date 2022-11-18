@@ -3,6 +3,7 @@
         :shouldShowSidebar="shouldShowSidebar" :bannerImg="bannerImg">
         <CommonHome v-if="$page.frontmatter.home" :bannerImg="bannerImg" />
         <CommonFriend v-else-if="$page.frontmatter.friend"/>
+        <CommonTag v-else-if="$page.frontmatter.tag"/>
         <Page :sidebar-items="sidebarItems" v-else />
     </CommonLayout>
 </template>
@@ -12,6 +13,7 @@ import { resolveSidebarItems } from '../util'
 import CommonLayout from '@theme/layouts/CommonLayout.vue'
 import CommonHome from '@theme/layouts/CommonHome.vue'
 import CommonFriend from '@theme/layouts/CommonFriend.vue'
+import CommonTag from '@theme/layouts/CommonTag.vue'
 
 import Page from '@theme/components/Page.vue'
 
@@ -20,6 +22,7 @@ export default {
         CommonLayout,
         CommonHome,
         CommonFriend,
+        CommonTag,
 
         Page
     },

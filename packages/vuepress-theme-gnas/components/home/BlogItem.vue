@@ -41,7 +41,6 @@ export default {
     padding: 1rem 1.2rem;
     border-radius: 8px;
     background: #fff;
-    transition: all 0.3s;
 
     &:not(:first-child) {
         margin-top: 20px;

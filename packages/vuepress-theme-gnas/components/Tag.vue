@@ -1,5 +1,5 @@
 <template>
-    <span class="gnas-tag" :class="`gnas-tag-${type} gnas-tag--${effect}`">
+    <span class="gnas-tag" :class="`gnas-tag-${type} gnas-tag--${effect}`" @click="$emit('click',type,effect)">
         <i :class="icon" v-if="icon" />
         <slot>
         </slot>

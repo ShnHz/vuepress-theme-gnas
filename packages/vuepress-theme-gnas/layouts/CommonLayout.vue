@@ -42,7 +42,6 @@ export default {
     },
     computed: {
         pageClasses() {
-            console.log(this.$page)
             const userPageClass = this.$page.frontmatter.pageClass
             return [
                 {
@@ -51,6 +50,7 @@ export default {
                     'no-sidebar': !this.shouldShowSidebar,
                     'index': this.$page.frontmatter.home,
                     'friend': this.$page.frontmatter.friend,
+                    'tag': this.$page.frontmatter.tag,
                     'blog':this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
                 },
                 userPageClass,
