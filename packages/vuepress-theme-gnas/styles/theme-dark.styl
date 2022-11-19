@@ -2,7 +2,7 @@ $theme--dark-color-1 = #171D20;
 $theme--dark-color-2 = #2f3133;
 $theme--dark-color-3 = #424242;
 
-.blog-item-wrap, .author-info-wrap, .love-info-wrap, .tag-info-wrap, .home-wrap  {
+.blog-item-wrap, .author-info-wrap, .love-info-wrap, .tag-info-wrap, .home-wrap {
     transition: all 0.5s ease;
 }
 
@@ -142,7 +142,7 @@ $theme--dark-color-3 = #424242;
      * 标签
      */
     .tag {
-        .blog-item-wrap ,.tag-list-wrap{
+        .blog-item-wrap, .tag-list-wrap {
             background: $theme--dark-color-2 !important;
 
             .article-title, .article-summary {
@@ -151,6 +151,29 @@ $theme--dark-color-3 = #424242;
 
             .article-date {
                 color: hsla(0, 0%, 100%, 0.7) !important;
+            }
+        }
+    }
+
+    /**
+     * 归档
+     */
+    .archives {
+        main {
+            ul {
+                li {
+
+                    &.lead {
+                        .date-wrap {
+                            color: #fff;
+                        }
+                    }
+
+                    &:nth-child(even) {
+                        background-color: $theme--dark-color-1 !important;
+                        background-image: linear-gradient(to left, $theme--dark-color-1, $theme--dark-color-2, $theme--dark-color-2, $theme--dark-color-2, $theme--dark-color-1) !important;
+                    }
+                }
             }
         }
     }
