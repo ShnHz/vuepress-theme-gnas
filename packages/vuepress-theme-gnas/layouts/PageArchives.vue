@@ -46,7 +46,14 @@ export default {
                 }
             })
 
-            return map
+            return [
+                ...Array.from(map).filter(item =>{
+                    return item[0] != 'Other'
+                }),
+                ...Array.from(map).filter(item =>{
+                    return item[0] == 'Other'
+                }),
+            ]
         }
     },
     mounted() {
