@@ -1,5 +1,5 @@
 ---
-friend: true
+mode: 'friend'
 friendLink: [{
     "name": "野宁新之助",
     "href": "https://www.sanghangning.cn",

@@ -1,9 +1,10 @@
 <template>
     <CommonLayout :sidebarItems="sidebarItems" :shouldShowNavbar="shouldShowNavbar"
-        :shouldShowSidebar="shouldShowSidebar" :bannerImg="bannerImg">
-        <CommonHome v-if="$page.frontmatter.home" :bannerImg="bannerImg" />
-        <CommonFriend v-else-if="$page.frontmatter.friend"/>
-        <CommonTag v-else-if="$page.frontmatter.tag"/>
+        :shouldShowSidebar="shouldShowSidebar" :bannerImg="bannerImg" @toggleSidebar="toggleSidebar">
+        <PageHome v-if="$page.frontmatter.home" :bannerImg="bannerImg" />
+        <PageFriend v-else-if="$page.frontmatter.mode == 'friend'" />
+        <PageTag v-else-if="$page.frontmatter.mode == 'tag'" />
+        <PageArchives v-else-if="$page.frontmatter.mode == 'archives'" />
         <Page :sidebar-items="sidebarItems" v-else />
     </CommonLayout>
 </template>
@@ -11,18 +12,20 @@
 import { resolveSidebarItems } from '../util'
 
 import CommonLayout from '@theme/layouts/CommonLayout.vue'
-import CommonHome from '@theme/layouts/CommonHome.vue'
-import CommonFriend from '@theme/layouts/CommonFriend.vue'
-import CommonTag from '@theme/layouts/CommonTag.vue'
+import PageHome from '@theme/layouts/PageHome.vue'
+import PageFriend from '@theme/layouts/PageFriend.vue'
+import PageTag from '@theme/layouts/PageTag.vue'
+import PageArchives from '@theme/layouts/PageArchives.vue'
 
 import Page from '@theme/components/Page.vue'
 
 export default {
     components: {
         CommonLayout,
-        CommonHome,
-        CommonFriend,
-        CommonTag,
+        PageHome,
+        PageFriend,
+        PageTag,
+        PageArchives,
 
         Page
     },
@@ -77,6 +80,9 @@ export default {
 
     },
     methods: {
+        toggleSidebar(isSidebarOpen) {
+            this.$emit('toggle-sidebar', isSidebarOpen)
+        },
     },
 }
 </script>

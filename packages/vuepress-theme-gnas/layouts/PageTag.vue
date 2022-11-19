@@ -18,7 +18,7 @@ import Tag from '@theme/components/Tag'
 export default {
     components: {
         BlogList,
-        Tag
+        Tag,
     },
     data() {
         return {

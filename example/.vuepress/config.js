@@ -84,11 +84,11 @@ module.exports = {
             },
             {
                 text: '归档',
-                link: '/views/file/',
+                link: '/views/Archives/',
             },
             {
                 text: '标签',
-                link: '/views/tag/'
+                link: '/views/Tag/'
             },
             {
                 text: '友链',

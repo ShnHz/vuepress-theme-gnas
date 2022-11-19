@@ -29,6 +29,6 @@ export default {
             return type == 'all' ? this.$blogList : this.$blogList.filter(item =>{
                 return item.frontmatter.config.tag.includes(type) || false
             })
-        }
+        },
     }
 }

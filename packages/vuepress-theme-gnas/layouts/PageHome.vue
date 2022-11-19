@@ -17,7 +17,7 @@
 
 
         <main>
-            <BlogList />
+            <BlogList :data="blogList" />
 
             <aside>
                 <AuthorInfo v-if="$site.themeConfig.home.authorConfig.enable" />
@@ -55,7 +55,19 @@ export default {
         }
     },
     computed: {
-
+        blogList() {
+            let topList = this.$blogList.filter(item => {
+                return item.frontmatter.config && item.frontmatter.config.top
+            }).sort((a, b) => {
+                return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+            })
+            let otherList = this.$blogList.filter(item => {
+                return !(item.frontmatter.config && item.frontmatter.config.top)
+            }).sort((a, b) => {
+                return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+            })
+            return [...topList, ...otherList]
+        }
     },
     mounted() {
     }
