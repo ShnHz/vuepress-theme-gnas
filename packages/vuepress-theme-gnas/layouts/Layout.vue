@@ -16,8 +16,7 @@ import PageHome from '@theme/layouts/PageHome.vue'
 import PageFriend from '@theme/layouts/PageFriend.vue'
 import PageTag from '@theme/layouts/PageTag.vue'
 import PageArchives from '@theme/layouts/PageArchives.vue'
-
-import Page from '@theme/components/Page.vue'
+import Page from '@theme/layouts/Page.vue'
 
 export default {
     components: {

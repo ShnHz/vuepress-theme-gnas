@@ -4,9 +4,10 @@
 
     <Content class="theme-default-content" />
 
+    <Directory v-if="$page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.directory" ref="directory"/>
+
     <Valine
       v-if="$site.themeConfig.valine.enable && (!$page.frontmatter || !$page.frontmatter.config || $page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.valine)" />
-    <!-- <BlogDirectory v-if="blogDirectoryVisible" /> -->
 
     <PageEdit />
 
@@ -19,12 +20,12 @@
 <script>
 import PageEdit from '@theme/components/PageEdit.vue'
 import PageNav from '@theme/components/PageNav.vue'
-// import BlogDirectory from './BlogDirectory.vue'
+import Directory from '@theme/components/Directory.vue'
 
 import Valine from '@theme/components/Valine.vue'
 
 export default {
-  components: { PageEdit, PageNav, Valine },
+  components: { PageEdit, PageNav, Directory, Valine },
   props: ['sidebarItems'],
   data() {
     return {
@@ -32,27 +33,14 @@ export default {
     }
   },
   watch: {
-    $route: {
-      handler: function (val, oldVal) {
-        // this.getBlogDirectoryVisible()
-      },
-      // 深度观察监听
-      deep: true
-    }
   },
   mounted() {
-    this.getBlogDirectoryVisible()
+    if(this.$refs.directory){
+      this.$refs.directory.getDirectory()
+    }
   },
   methods: {
-    getBlogDirectoryVisible() {
-      // let pageClass = document.getElementsByClassName('theme-container')[0]
-      //   .className
-      // if (pageClass.includes('blog-catalog')) {
-      //   this.blogDirectoryVisible = true
-      // } else {
-      //   this.blogDirectoryVisible = false
-      // }
-    }
+
   }
 }
 </script>

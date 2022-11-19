@@ -15,10 +15,10 @@ module.exports = {
             dateFormat: 'MM dd,yyyy',
         },
         // 评论系统 文档：https://valine.js.org/，支持valine所有配置
-        valine:{
-            enable:true,
-            appId:'xxx',
-            appKey:'xxx'
+        valine: {
+            enable: true,
+            appId: 'xxx',
+            appKey: 'xxx'
         },
 
         logo: '/img/logo.png',
@@ -99,9 +99,9 @@ module.exports = {
                 link: 'https://github.com/ShnHz/vuepress-theme-gnas'
             }
         ],
-    
+
         lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
-        tagList:[{
+        tagList: [{
             "name": "test",
             "type": "test"
         }, {

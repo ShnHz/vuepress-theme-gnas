@@ -311,11 +311,11 @@
 }
 
 // blog 带目录
-.blog-catalog {
+.blog-directory {
     @extend .theme-container.blog;
 
     .page {
-        display: flex;
+        display: flex !important;
         justify-content: center;
         padding-left: 300px !important;
 
@@ -330,8 +330,8 @@
 }
 
 // blog 带目录
-.blog-catalog-h4color {
-    @extend .blog-catalog;
+.blog-directory-h4color {
+    @extend .blog-directory;
 
     .page {
         .theme-default-content {
@@ -343,7 +343,7 @@
 }
 
 // interview 带目录
-.blog-catalog-interview {
+.blog-directory-interview {
     @extend .theme-container.blog;
 
     .blog-directory {
