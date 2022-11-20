@@ -4,7 +4,8 @@ config: {
     top: true,
     dir: false,
     tag: ['test'],
-    valine: false
+    valine: true,
+    valineId: /blog/other/AboutMyBlog.html
 }
 summary: 测试测试测试测试测试测试测试测试测试测试
 ---
