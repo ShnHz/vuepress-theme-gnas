@@ -15,18 +15,17 @@ export default {
     methods: {
         $tagFormat(tags) {
             return tags.map(item => {
-                this.$tagList.forEach(_item => {
-                    if (_item.type == item) return _item
+                let list = this.$tagList.filter(_item => {
+                    return _item.type == item
                 });
-
-                return {
+                return list.length == 0 ? {
                     "name": item,
                     "type": item
-                }
+                } : list[0]
             })
         },
-        $blogFromTag(type){
-            return type == 'all' ? this.$blogList : this.$blogList.filter(item =>{
+        $blogFromTag(type) {
+            return type == 'all' ? this.$blogList : this.$blogList.filter(item => {
                 return item.frontmatter.config.tag.includes(type) || false
             })
         },

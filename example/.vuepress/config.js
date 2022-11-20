@@ -102,7 +102,7 @@ module.exports = {
 
         lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
         tagList: [{
-            "name": "test",
+            "name": "Test",
             "type": "test"
         }, {
             "name": "vue",
