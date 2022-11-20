@@ -6,10 +6,8 @@
     "dev": "vuepress dev example",
     "build:example": "vuepress build example"
   },
-  "workspaces": [
-    "packages/vuepress-theme-gnas"
-  ],
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.9.7",
     "async-validator": "^4.2.5",
     "element-ui": "^2.15.12",
     "loadsh": "^0.0.4",

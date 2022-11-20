@@ -1,19 +1,21 @@
 <template>
   <main class="page">
-    <slot name="top" />
+    <div>
+      <slot name="top" />
 
-    <Content class="theme-default-content" />
+      <Content class="theme-default-content" />
+      <Valine
+        v-if="$site.themeConfig.valine.enable && (!$page.frontmatter || !$page.frontmatter.config || $page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.valine)" />
 
-    <Directory v-if="$page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.directory" ref="directory"/>
+      <PageEdit />
 
-    <Valine
-      v-if="$site.themeConfig.valine.enable && (!$page.frontmatter || !$page.frontmatter.config || $page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.valine)" />
+      <PageNav v-bind="{ sidebarItems }" />
 
-    <PageEdit />
+      <slot name="bottom" />
+    </div>
 
-    <PageNav v-bind="{ sidebarItems }" />
+    <Directory v-if="$page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.dir" ref="directory" />
 
-    <slot name="bottom" />
   </main>
 </template>
 
@@ -35,7 +37,7 @@ export default {
   watch: {
   },
   mounted() {
-    if(this.$refs.directory){
+    if (this.$refs.directory) {
       this.$refs.directory.getDirectory()
     }
   },
@@ -61,8 +63,5 @@ $wrapper
   min-height:100vh;
   padding-bottom: 2rem;
   display: block;
-
-  .theme-default-content{
-  }
 }
 </style>

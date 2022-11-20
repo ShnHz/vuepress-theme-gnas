@@ -55,7 +55,7 @@ export default {
                     'tag': this.$page.frontmatter.mode == 'tag',
                     'archives': this.$page.frontmatter.mode == 'archives',
                     'blog': this.$page.regularPath.includes(this.$site.themeConfig.blogBase),
-                    'blog-directory': this.$page.frontmatter.config && this.$page.frontmatter.config.directory
+                    'blog-directory': this.$page.frontmatter.config && this.$page.frontmatter.config.dir
                 },
                 userPageClass,
             ]
