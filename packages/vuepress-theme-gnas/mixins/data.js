@@ -2,7 +2,7 @@ export default {
     computed: {
         $blogList() {
             let list = this.$site.pages.filter(item => {
-                return item.regularPath.includes(this.$site.themeConfig.blogBase)
+                return item.regularPath.includes(this.$site.themeConfig.blogBase) && item.frontmatter.config.show != false
             })
 
 
