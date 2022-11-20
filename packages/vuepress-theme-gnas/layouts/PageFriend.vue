@@ -48,8 +48,7 @@
             </div>
 
             <div class="valine-wrap">
-                <Valine
-                    v-if="$site.themeConfig.valine.enable && (!$page.frontmatter || !$page.frontmatter.config || $page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.valine)" />
+                <Valine v-if="$site.themeConfig.valine.enable" />
             </div>
         </main>
     </div>
