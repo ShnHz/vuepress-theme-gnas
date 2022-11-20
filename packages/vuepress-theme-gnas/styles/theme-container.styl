@@ -149,7 +149,7 @@
 
 // blog
 .theme-container.blog {
-    .theme-default-content {
+    .content-wrap {
         position: relative;
         max-width: 800px !important;
         margin: 0 auto !important;
@@ -158,12 +158,17 @@
         line-height: 1.75;
         overflow: visible;
 
-        .date {
-            position: relative;
+        .blog-th-wrap {
+            width: 100%;
+            position: absolute;
+            top: 4.6rem;
+            padding: 0 2.5rem;
+            color: #909399;
+            font-size: 14px;
 
             .leancloud_visitors {
-                position: absolute;
-                right: 0;
+                float: right;
+                position: relative;
                 top: -5px;
                 font-size: 18px;
                 color: #555;
@@ -176,6 +181,14 @@
                     font-style: normal;
                 }
             }
+        }
+    }
+
+    .theme-default-content {
+        padding-top: 4rem !important;
+
+        h2 {
+            font-size: 1.8rem;
         }
 
         h3 {
@@ -301,19 +314,6 @@
     }
 }
 
-// 创建blog页面
-.blog-create {
-    @extend .theme-container.blog;
-    height: auto !important;
-    background: #F4F4F4;
-
-    .theme-default-content {
-        position: relative;
-        max-width: 1620px !important;
-        width: 1620px !important;
-    }
-}
-
 // blog 带目录
 .blog-directory {
     @extend .theme-container.blog;
@@ -321,7 +321,10 @@
     .page {
         display: flex !important;
         justify-content: center;
-        padding-left: 300px !important;
+
+        .content-wrap {
+            margin: 0 !important;
+        }
 
         .theme-default-content {
             margin: 0 !important;

@@ -1,7 +1,7 @@
 <template>
     <div class="tag-info-wrap">
         <Tag :key="`tag-${index}-${item.type}`"
-            v-for="(item, index) in $tagList" :type="item.type">
+            v-for="(item, index) in $tagList" :type="item.type" @click="handleClick">
             {{ item.name }}
         </Tag>
     </div>
@@ -18,6 +18,16 @@ export default {
 
         }
     },
+    methods:{
+        handleClick(tag){
+            this.$router.push({
+                path:'/views/Tag.html',
+                query:{
+                    type:tag
+                }
+            })
+        }
+    }
 }
 </script>
 <style lang="stylus">
