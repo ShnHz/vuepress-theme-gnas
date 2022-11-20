@@ -20,7 +20,8 @@ export default {
   },
   methods: {
     getDirectory() {
-      this.directory = [...document.querySelectorAll('h3, h4, h5, h6')].map(item => {
+      console.log(this.$page.frontmatter.config.dirTag)
+      this.directory = [...document.querySelectorAll(this.$page.frontmatter && this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6')].map(item => {
         let dom = [...item.querySelectorAll('a')][0]
         let href = dom.getAttribute('href')
         return {
@@ -29,8 +30,6 @@ export default {
           href: href.replace(/[\r\n]/g, '').replace(/[\s\.]/g, '-')
         }
       })
-
-      console.log(this.directory)
     },
     scrollTo(href) {
       window.history.pushState({}, 0, window.location.href.split('#')[0] + href)
