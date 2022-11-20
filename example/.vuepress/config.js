@@ -1,6 +1,9 @@
 module.exports = {
     title: "vuepress-theme-gnas",
     dest: 'example/public',
+    plugins: {
+        '@vuepress/back-to-top': true
+    },
     theme: require.resolve('../../packages/vuepress-theme-gnas'),
     themeConfig: {
         themeMode: {
@@ -141,6 +144,10 @@ module.exports = {
         }, {
             "name": "算法",
             "type": "algorithm"
-        }]
+        }],
+
+        live2d: {
+            model: 'hijiki',
+        }
     }
 }

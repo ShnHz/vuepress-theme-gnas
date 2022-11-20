@@ -1,8 +1,5 @@
 // Theme API.
 module.exports = (options, ctx) => ({
-    // alias () {
-    //     const { themeConfig, siteConfig } = ctx
-    // },
     extend: '@vuepress/theme-default',
     plugins: [
         [
@@ -14,7 +11,7 @@ module.exports = (options, ctx) => ({
                     enable: true,
                     // 模型名称(default: hibiki)>>>取值请参考：
                     // https://github.com/JoeyBling/hexo-theme-yilia-plus/wiki/live2d%E6%A8%A1%E5%9E%8B%E5%8C%85%E5%B1%95%E7%A4%BA
-                    model: 'hijiki',
+                    model: 'wanko',
                     display: {
                         position: "left", // 显示位置：left/right(default: 'right')
                         width: 135, // 模型的长度(default: 135)
@@ -27,10 +24,10 @@ module.exports = (options, ctx) => ({
                     },
                     react: {
                         opacity: 0.8 // 模型透明度(default: 0.8)
-                    }
+                    },
+                    ...ctx.themeConfig.live2d
                 }
-            },
-            '@vuepress-reco/back-to-top'
+            }
         ]
     ]
 })
