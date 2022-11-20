@@ -1,9 +1,14 @@
 {
-  "version": "1.0.0",
+  "name": "vuepress-theme-gnas",
+  "author": "ShnHz",
+  "description": "A simple and beautiful vuepress Blog & Doc theme.",
   "scripts": {
     "dev": "vuepress dev example",
     "build:example": "vuepress build example"
   },
+  "workspaces": [
+    "packages/vuepress-theme-gnas"
+  ],
   "devDependencies": {
     "async-validator": "^4.2.5",
     "element-ui": "^2.15.12",
