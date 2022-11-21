@@ -1,5 +1,17 @@
 .sidebar {
-    padding: 0 2.5rem 1.5rem;
+    padding: 2rem 2.5rem 1.5rem;
+
+    .sidebar-links > li:not(:first-child) {
+        margin: 0 !important;
+    }
+
+    >.sidebar-links >li:first-child {
+        >.sidebar-group {
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+    }
 
     .sidebar-heading, .sidebar-links .sidebar-link {
         transition-property: all;
@@ -39,7 +51,7 @@
         position: relative;
         margin: 0 !important;
         border: none !important;
-        padding: 2rem 0 1rem !important;
+        padding: 1rem 0 1rem !important;
         color: $accentColor !important;
         font-size: 1em !important;
 
@@ -55,9 +67,15 @@
             line-height: 1.75rem;
             position: relative;
             padding-left: 0;
-            font-size: 0.9rem;
+            font-size: 0.9rem !important;
             border: none;
         }
+    }
+
+    .sidebar-group {
+        margin-top: 1.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid #ececec;
     }
 
     .sidebar-group.collapsable {

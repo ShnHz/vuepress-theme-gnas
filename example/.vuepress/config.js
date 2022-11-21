@@ -109,23 +109,27 @@ module.exports = {
                 link: 'https://github.com/ShnHz/vuepress-theme-gnas'
             }
         ],
-        sidebar: [{
-            title: 'Group 1',
-            collapsable: false, 
-            path: '/views/notes/TestGroup',
-            children: [
-                '/views/notes/Test1',
-                '/views/notes/Test2',
-                {
-                    title: '测试下拉',
-                    collapsable: true,
-                    children: [
-                        '/views/notes/Test3',
-                        '/views/notes/Test4',
-                    ]
-                },
-            ]
-        }],
+        sidebar: [
+            '/views/notes/Test3',
+            '/views/notes/Test4',
+            {
+                title: 'Group 1',
+                collapsable: false,
+                path: '/views/notes/TestGroup',
+                children: [
+                    '/views/notes/Test1',
+                    '/views/notes/Test2',
+                    {
+                        title: '测试下拉',
+                        collapsable: true,
+                        children: [
+                            '/views/notes/Test3',
+                            '/views/notes/Test4',
+                        ]
+                    },
+                ]
+            }
+        ],
         sidebarDepth: 0,
         activeHeaderLinks: false,
 
