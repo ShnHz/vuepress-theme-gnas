@@ -10,7 +10,7 @@
                 <i class="gnas-i gnas-i-date" />
                 {{ $page.frontmatter.date }}
             </span>
-            <span v-if="$page.frontmatter.config && $page.frontmatter.config.tag">
+            <span v-if="$page.frontmatter.config && $page.frontmatter.config.tag && $page.frontmatter.config.tag.length > 0">
                 <i class="gnas-i gnas-i-file" />
                 {{ $tagFormat($page.frontmatter.config && $page.frontmatter.config.tag ||
                         []).map(item => item.name).join('，')
