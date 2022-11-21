@@ -5,12 +5,12 @@ config: {
     dir: false,
     tag: ['test'],
     valine: true,
-    valineId: /blog/algorithm/Hash.html
 }
+title: 关于我的博客
 summary: 测试测试测试测试测试测试测试测试测试测试
 ---
 
-## 关于我的博客
+### 随便说说
 
 我的博客目前没有做后端，也没有数据库，所有内容都是前端，由于本人太懒了，写文章也是直接在代码层面上写。
 
@@ -20,18 +20,4 @@ summary: 测试测试测试测试测试测试测试测试测试测试
 
 用的框架是<a href="https://vuepress.vuejs.org/zh/" target="_blank">vuepress</a>，可以去官网看文档，觉得我做的博客还不错想要模仿的话可以参考文档和<a href="https://github.com/ShnHz/say-my-life" target="_blank">我的代码~</a>
 
-### 测试目录1
-
-#### 测试目录11
-#### 测试目录12
-
-##### 测试目录123
-
-### 测试目录2
-
-### 测试目录3
-
-#### 测试目录31
-#### 测试目录32
-
-##### 测试目录323
+### 随便说说2

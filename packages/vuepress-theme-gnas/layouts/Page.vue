@@ -3,18 +3,10 @@
     <div class="content-wrap">
       <slot name="top" />
 
-      <div class="blog-th-wrap" v-if="isBlog">
-        {{ $page.frontmatter.date }}
-        <span
-          v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)"
-          :id="$page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.valineId ? $page.frontmatter.config.valineId : window.location.pathname"
-          class="leancloud_visitors">
-          <i class="gnas-i gnas-i-eye" />
-          <i class="leancloud-visitors-count"></i>
-        </span>
-      </div>
+      <PageTitle />
 
       <Content class="theme-default-content" />
+
       <Valine v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)" />
 
       <PageEdit />
@@ -32,12 +24,13 @@
 <script>
 import PageEdit from '@theme/components/PageEdit.vue'
 import PageNav from '@theme/components/PageNav.vue'
+import PageTitle from '@theme/components/PageTitle.vue'
 import Directory from '@theme/components/Directory.vue'
 
 import Valine from '@theme/components/Valine.vue'
 
 export default {
-  components: { PageEdit, PageNav, Directory, Valine },
+  components: { PageEdit, PageNav, PageTitle, Directory, Valine },
   props: ['sidebarItems'],
   data() {
     return {
@@ -46,15 +39,8 @@ export default {
   },
   watch: {
   },
-  computed: {
-    isBlog() {
-      return this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
-    }
-  },
   mounted() {
-    if (this.$refs.directory) {
-      this.$refs.directory.getDirectory()
-    }
+    if (this.$refs.directory) this.$refs.directory.getDirectory()
   },
   methods: {
 

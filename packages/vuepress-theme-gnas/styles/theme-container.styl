@@ -151,42 +151,16 @@
 .theme-container.blog {
     .content-wrap {
         position: relative;
-        max-width: 800px !important;
+        max-width: 800px;
         margin: 0 auto !important;
         font-weight: 400;
         font-size: 15px;
         line-height: 1.75;
+        word-wrap: break-word;
         overflow: visible;
-
-        .blog-th-wrap {
-            width: 100%;
-            position: absolute;
-            top: 4.6rem;
-            padding: 0 2.5rem;
-            color: #909399;
-            font-size: 14px;
-
-            .leancloud_visitors {
-                float: right;
-                position: relative;
-                top: -5px;
-                font-size: 18px;
-                color: #555;
-
-                .shni {
-                    font-size: 20px;
-                }
-
-                .leancloud-visitors-count {
-                    font-style: normal;
-                }
-            }
-        }
     }
 
     .theme-default-content {
-        padding-top: 4rem !important;
-
         h2 {
             font-size: 1.8rem;
         }
@@ -374,6 +348,14 @@
             h4 {
                 color: #339b6c;
             }
+        }
+    }
+}
+
+@media (min-width: 1280px) {
+    .theme-container.blog {
+        .theme-default-content {
+            width: 800px;
         }
     }
 }

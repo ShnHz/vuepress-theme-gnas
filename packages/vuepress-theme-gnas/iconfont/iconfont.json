@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "769435",
+      "name": "file",
+      "font_class": "file",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "248978",
+      "name": "date",
+      "font_class": "date",
+      "unicode": "e697",
+      "unicode_decimal": 59031
+    },
+    {
       "icon_id": "16618186",
       "name": "eye",
       "font_class": "eye",

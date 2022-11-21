@@ -20,7 +20,6 @@ export default {
   },
   methods: {
     getDirectory() {
-      console.log(this.$page.frontmatter.config.dirTag)
       this.directory = [...document.querySelectorAll(this.$page.frontmatter && this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6')].map(item => {
         let dom = [...item.querySelectorAll('a')][0]
         let href = dom.getAttribute('href')
@@ -48,7 +47,7 @@ export default {
 <style lang="stylus" scoped>
 .blog-directory {
   position: sticky;
-  top: 80px;
+  top: 96px;
   width: 300px;
   height: auto;
   min-width: 300px;
