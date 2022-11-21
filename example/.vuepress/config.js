@@ -98,7 +98,7 @@ module.exports = {
             },
             {
                 text: '笔记',
-                link: '/views/notes/Test1'
+                link: '/views/notes/Web'
             },
             {
                 text: '友链',
@@ -110,6 +110,7 @@ module.exports = {
             }
         ],
         sidebar: [
+            '/views/notes/Web',
             '/views/notes/Test3',
             '/views/notes/Test4',
             {
