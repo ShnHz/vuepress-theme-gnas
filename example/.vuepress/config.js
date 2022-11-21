@@ -6,6 +6,7 @@ module.exports = {
     },
     theme: require.resolve('../../packages/vuepress-theme-gnas'),
     themeConfig: {
+        smoothScroll: true,
         themeMode: {
             enable: true,
             default: 'light'
@@ -97,7 +98,7 @@ module.exports = {
             },
             {
                 text: '笔记',
-                link: '/views/notes/Notes'
+                link: '/views/notes/Test1'
             },
             {
                 text: '友链',
@@ -108,11 +109,25 @@ module.exports = {
                 link: 'https://github.com/ShnHz/vuepress-theme-gnas'
             }
         ],
-        sidebar: {
-            '/views/notes/': [
-                '/views/notes/Chrome',
+        sidebar: [{
+            title: 'Group 1',
+            collapsable: false, 
+            path: '/views/notes/TestGroup',
+            children: [
+                '/views/notes/Test1',
+                '/views/notes/Test2',
+                {
+                    title: '测试下拉',
+                    collapsable: true,
+                    children: [
+                        '/views/notes/Test3',
+                        '/views/notes/Test4',
+                    ]
+                },
             ]
-        },
+        }],
+        sidebarDepth: 0,
+        activeHeaderLinks: false,
 
         lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
         tagList: [{

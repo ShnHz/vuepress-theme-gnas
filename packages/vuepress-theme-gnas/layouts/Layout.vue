@@ -58,7 +58,7 @@ export default {
             return (
                 !frontmatter.home &&
                 frontmatter.sidebar !== false &&
-                this.sidebarItems.length
+                this.sidebarItems.length && !['friend','tag','archives'].includes(frontmatter.mode) && !this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
             )
         },
         sidebarItems() {

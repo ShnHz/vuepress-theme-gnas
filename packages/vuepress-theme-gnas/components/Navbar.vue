@@ -66,7 +66,7 @@ export default {
     scrollTop: {
       handler(newVal) {
         if (this.transparentEdit) {
-          this.transparent = newVal < 300
+          this.transparent = newVal < 500
         }
       },
     },
@@ -147,9 +147,11 @@ $navbar-horizontal-padding = 1.5rem;
   line-height: $navbarHeight - 1.4rem;
   transition: all 0.5s ease;
   border-bottom: 1px solid #eaecef;
-
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: blur(20px);
   &.navbar-transparent {
     background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(2px);
     border: none;
 
     .home-link {

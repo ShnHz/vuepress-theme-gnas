@@ -1,7 +1,7 @@
 <template>
     <div class="theme-container" :class="pageClasses" @touchend="onTouchEnd" @touchstart="onTouchStart">
         <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
-        <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" />
+        <Sidebar v-if="shouldShowSidebar" :items="sidebarItems" @toggle-sidebar="toggleSidebar" />
         <slot>
         </slot>
         <Footer :bannerImg="bannerImg" />
@@ -55,7 +55,8 @@ export default {
                     'tag': this.$page.frontmatter.mode == 'tag',
                     'archives': this.$page.frontmatter.mode == 'archives',
                     'blog': this.$page.regularPath.includes(this.$site.themeConfig.blogBase),
-                    'blog-directory': this.$page.frontmatter.config && this.$page.frontmatter.config.dir
+                    'directory-wrap': this.$page.frontmatter.config && this.$page.frontmatter.config.dir && this.$page.regularPath.includes(this.$site.themeConfig.blogBase),
+                    'directory': this.$page.frontmatter.config && this.$page.frontmatter.config.dir && !this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
                 },
                 userPageClass,
             ]

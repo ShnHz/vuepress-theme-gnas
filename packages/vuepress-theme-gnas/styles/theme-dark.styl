@@ -57,6 +57,10 @@ $theme--dark-color-3 = #424242;
             color: #fff;
         }
 
+        .sidebar-link.active {
+            color: #fff !important;
+        }
+
         .nav-links {
             border-bottom: 1px solid $theme--dark-color-2;
         }
@@ -102,13 +106,31 @@ $theme--dark-color-3 = #424242;
     /**
      * 页面通用
      */
-    .page, .page-edit {
+    .page {
         color: #fff;
         background: $theme--dark-color-1 !important;
         height: auto;
+
+        .page-title-wrap {
+            >div {
+                color: #fff !important;
+            }
+
+            .page-th-wrap {
+                color: #fff !important;
+            }
+        }
+
+        .directory-wrap {
+            background: $theme--dark-color-2 !important;
+
+            a {
+                color: #ccc !important;
+            }
+        }
     }
 
-    .blog, .blog-directory, .friend, .notes, .diary {
+    .blog, .directory-wrap, .friend, .notes, .diary {
         .page {
             color: #fff;
             padding-bottom: 0;
@@ -184,24 +206,14 @@ $theme--dark-color-3 = #424242;
     /**
      * 博客
      */
-    .blog, .blog-directory {
+    .blog, .directory-wrap {
         .page {
             padding-top: 7.6rem;
             transition: padding 0.5s ease !important;
 
             .page-title-wrap {
-                margin-top 0 !important;
+                margin-top: 0 !important;
                 background: $theme--dark-color-2 !important;
-
-                >div {
-                    color: #fff !important;
-                }
-
-                .page-th-wrap {
-                    >span {
-                        color: #fff !important;
-                    }
-                }
             }
 
             .theme-default-content.content__default {
@@ -227,13 +239,8 @@ $theme--dark-color-3 = #424242;
             color: #aaa;
         }
 
-        .blog-directory {
+        .directory-wrap {
             margin-left: 10px;
-            background: $theme--dark-color-2 !important;
-
-            a {
-                color: #ccc !important;
-            }
         }
     }
 

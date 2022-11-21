@@ -289,7 +289,7 @@
 }
 
 // blog 带目录
-.blog-directory {
+.directory-wrap {
     @extend .theme-container.blog;
 
     .page {
@@ -297,6 +297,7 @@
         justify-content: center;
 
         .content-wrap {
+            flex: 1;
             margin: 0 !important;
         }
 
@@ -310,24 +311,36 @@
     }
 }
 
-// blog 带目录
-.blog-directory-h4color {
-    @extend .blog-directory;
-
+// 普通文章带目录
+.directory {
     .page {
-        .theme-default-content {
-            h4 {
-                color: #339b6c;
-            }
+        display: flex !important;
+        justify-content: center;
+
+        .content-wrap {
+            flex: 1;
+            margin: 0 !important;
         }
+
+        .theme-default-content {
+            margin: 0 !important;
+        }
+
+        .directory-wrap{
+           margin-right 2rem; 
+        }
+    }
+
+    .page-edit {
+        display: none;
     }
 }
 
 // interview 带目录
-.blog-directory-interview {
+.directory-wrap-interview {
     @extend .theme-container.blog;
 
-    .blog-directory {
+    .directory-wrap {
         position: fixed !important;
         right: 36px;
     }

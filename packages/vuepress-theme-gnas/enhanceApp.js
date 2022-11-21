@@ -1,6 +1,8 @@
 /**
  * 扩展 VuePress 应用
  */
+import pageComponents from '@internal/page-components'
+
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css'
 import './iconfont/iconfont.css'
@@ -21,4 +23,8 @@ export default ({
 
     Vue.mixin(dataMixin)
     Vue.mixin(dateMixin)
+
+    for (const [name, component] of Object.entries(pageComponents)) {
+        Vue.component(name, component)
+    }
 }

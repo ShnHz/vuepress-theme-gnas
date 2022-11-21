@@ -1,7 +1,7 @@
 <template>
-  <div class="blog-directory">
+  <div class="directory-wrap">
     <header>目录</header>
-    <div class="directory-wrap">
+    <div class="directory-content-wrap">
       <ul>
         <li :key="`directory-h3-${item.value}-${index}`" class="directory-h3-li" v-for="(item, index) in directory"
           :class="item.type">
@@ -20,7 +20,8 @@ export default {
   },
   methods: {
     getDirectory() {
-      this.directory = [...document.querySelectorAll(this.$page.frontmatter && this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6')].map(item => {
+      console.log(document.querySelectorAll(this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6'))
+      this.directory = [...document.querySelectorAll(this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6')].map(item => {
         let dom = [...item.querySelectorAll('a')][0]
         let href = dom.getAttribute('href')
         return {
@@ -45,7 +46,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-.blog-directory {
+.directory-wrap {
   position: sticky;
   top: 7.6rem;
   width: 300px;
@@ -63,7 +64,7 @@ export default {
     font-weight: 600;
   }
 
-  .directory-wrap {
+  .directory-content-wrap {
     height: 250px;
     overflow-y: auto;
     ul{

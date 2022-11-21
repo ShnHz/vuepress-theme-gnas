@@ -3,7 +3,7 @@
     <div class="content-wrap">
       <slot name="top" />
 
-      <PageTitle v-if="$page.frontmatter.title != false"/>
+      <PageTitle v-if="$page.frontmatter.title != false" />
 
       <Content class="theme-default-content" />
 
@@ -30,6 +30,7 @@ import Directory from '@theme/components/Directory.vue'
 import Valine from '@theme/components/Valine.vue'
 
 export default {
+  name: 'page',
   components: { PageEdit, PageNav, PageTitle, Directory, Valine },
   props: ['sidebarItems'],
   data() {
@@ -40,10 +41,18 @@ export default {
   watch: {
   },
   mounted() {
-    if (this.$refs.directory) this.$refs.directory.getDirectory()
+    this.getDirectory()
+  },
+  updated() {
+    this.getDirectory()
   },
   methods: {
-
+    getDirectory() {
+      let _this = this
+      setTimeout(() => {
+        if (_this.$refs.directory) _this.$refs.directory.getDirectory()
+      }, 100)
+    }
   }
 }
 </script>
