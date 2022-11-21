@@ -6,6 +6,8 @@
         <PageTag v-else-if="$page.frontmatter.mode == 'tag'" />
         <PageArchives v-else-if="$page.frontmatter.mode == 'archives'" />
         <Page :sidebar-items="sidebarItems" v-else />
+
+        <FirstLoading :bannerImg="bannerImg" v-if="$site.themeConfig.firstLoading != false" />
     </CommonLayout>
 </template>
 <script>
@@ -18,6 +20,8 @@ import PageTag from '@theme/layouts/PageTag.vue'
 import PageArchives from '@theme/layouts/PageArchives.vue'
 import Page from '@theme/layouts/Page.vue'
 
+import FirstLoading from '@theme/components/FirstLoading.vue'
+
 export default {
     components: {
         CommonLayout,
@@ -26,7 +30,9 @@ export default {
         PageTag,
         PageArchives,
 
-        Page
+        Page,
+
+        FirstLoading
     },
     data() {
         return {

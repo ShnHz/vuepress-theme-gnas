@@ -10,6 +10,8 @@ module.exports = {
             enable: true,
             default: 'light'
         },
+        // 首屏加载动画
+        firstLoading:true,
         // blog文章所在位置
         blogBase: '/views/blog',
         // blogItem配置
