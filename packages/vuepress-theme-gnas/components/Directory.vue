@@ -47,7 +47,7 @@ export default {
 <style lang="stylus" scoped>
 .blog-directory {
   position: sticky;
-  top: 96px;
+  top: 7.6rem;
   width: 300px;
   height: auto;
   min-width: 300px;

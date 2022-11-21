@@ -42,7 +42,6 @@ export default {
   }
 }
 .valine-wrap{
-  max-width:800px;
   margin: 0 auto;
   padding 2rem 2.5rem
   .valine-module {

@@ -11,7 +11,7 @@ module.exports = {
             default: 'light'
         },
         // 首屏加载动画
-        firstLoading:true,
+        firstLoading: true,
         // blog文章所在位置
         blogBase: '/views/blog',
         // blogItem配置
@@ -89,11 +89,15 @@ module.exports = {
             },
             {
                 text: '归档',
-                link: '/views/Archives/',
+                link: '/views/Archives',
             },
             {
                 text: '标签',
-                link: '/views/Tag/'
+                link: '/views/Tag'
+            },
+            {
+                text: '笔记',
+                link: '/views/notes/Notes'
             },
             {
                 text: '友链',
@@ -104,6 +108,11 @@ module.exports = {
                 link: 'https://github.com/ShnHz/vuepress-theme-gnas'
             }
         ],
+        sidebar: {
+            '/views/notes/': [
+                '/views/notes/Chrome',
+            ]
+        },
 
         lastUpdated: 'Last Updated', // 文档更新时间：每个文件git最后提交的时间
         tagList: [{

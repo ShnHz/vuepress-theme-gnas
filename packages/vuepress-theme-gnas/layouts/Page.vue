@@ -3,7 +3,7 @@
     <div class="content-wrap">
       <slot name="top" />
 
-      <PageTitle />
+      <PageTitle v-if="$page.frontmatter.title != false"/>
 
       <Content class="theme-default-content" />
 

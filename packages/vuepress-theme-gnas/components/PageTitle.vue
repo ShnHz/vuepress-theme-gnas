@@ -1,16 +1,18 @@
 <template>
     <div class="page-title-wrap">
         <div class="page-title">
-            {{ $page.frontmatter.title || ($page.headers.length > 0 && $page.headers[0].title) || '标题未定义' }}
+            {{ $page.frontmatter.title || ($page.headers && $page.headers.length > 0 && $page.headers[0].title) ||
+                    '标题未定义'
+            }}
         </div>
         <div class="page-th-wrap">
-            <span>
+            <span v-if="$page.frontmatter.date">
                 <i class="gnas-i gnas-i-date" />
                 {{ $page.frontmatter.date }}
             </span>
-            <span>
+            <span v-if="$page.frontmatter.config && $page.frontmatter.config.tag">
                 <i class="gnas-i gnas-i-file" />
-                {{ $tagFormat($page.frontmatter && $page.frontmatter.config && $page.frontmatter.config.tag ||
+                {{ $tagFormat($page.frontmatter.config && $page.frontmatter.config.tag ||
                         []).map(item => item.name).join('，')
                 }}
             </span>
@@ -38,18 +40,15 @@ export default {
     },
     computed: {
         valineId() {
-            return this.$page.frontmatter && this.$page.frontmatter.config && this.$page.frontmatter.config.valineId ? this.$page.frontmatter.config.valineId : window.location.pathname
+            return this.$page.frontmatter.config && this.$page.frontmatter.config.valineId ? this.$page.frontmatter.config.valineId : window.location.pathname
         }
-    },
-    mounted() {
-        console.log(this.$page)
     }
 }
 </script>
 <style lang="stylus" scoped>
 .page-title-wrap{
     position relative
-    margin-top:3.6rem;
+    margin-top:5.6rem;
     padding: 2rem 2.5rem 0rem;
     .page-title{
         position relative;

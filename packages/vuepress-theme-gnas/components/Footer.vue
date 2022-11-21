@@ -1,9 +1,10 @@
 <template>
-    <footer class="footer-wrap">
+    <footer class="footer-wrap" v-if="visible">
         <div :style="{ 'background-image': `url(${bannerImg})` }" class="bg">
         </div>
         <div class="footer-main-wrap">
-            <div class="copyright">©{{ $site.themeConfig.startYear }} - {{ thisYear }} By {{ $site.themeConfig.author }}</div>
+            <div class="copyright">©{{ $site.themeConfig.startYear }} - {{ thisYear }} By {{ $site.themeConfig.author }}
+            </div>
             <div class="framework-info">
                 <a href="https://vuepress.vuejs.org/zh/" rel="noopener" target="_blank">
                     <span>Vuepress</span>
@@ -27,6 +28,11 @@ export default {
     data() {
         return {
             thisYear: new Date().getFullYear()
+        }
+    },
+    computed: {
+        visible() {
+            return ['tag', 'friend', 'archives'].includes(this.$page.frontmatter.mode) || this.$page.frontmatter.home == true || this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
         }
     }
 }
