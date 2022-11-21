@@ -20,8 +20,7 @@ export default {
   },
   methods: {
     getDirectory() {
-      console.log(document.querySelectorAll(this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6'))
-      this.directory = [...document.querySelectorAll(this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5, h6')].map(item => {
+      this.directory = [...document.querySelectorAll(this.$page.frontmatter.config && this.$page.frontmatter.config.dirTag ? this.$page.frontmatter.config.dirTag : 'h3, h4, h5')].map(item => {
         let dom = [...item.querySelectorAll('a')][0]
         let href = dom.getAttribute('href')
         return {
