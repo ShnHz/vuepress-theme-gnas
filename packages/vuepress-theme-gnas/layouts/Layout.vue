@@ -5,7 +5,7 @@
         <ClientOnly>
             <component :is="CLIENTONLY_Pages" :bannerImg="bannerImg" :sidebarItems="sidebarItems" />
             <component :is="CLIENTONLY_FirstLoading" :bannerImg="bannerImg"
-                v-if="$site.themeConfig.firstLoading != false" />
+                v-if="$site.themeConfig.firstLoading != false && isRouterAliveCount == 0" />
         </ClientOnly>
     </CommonLayout>
 </template>
@@ -28,6 +28,7 @@ export default {
             CLIENTONLY_Pages: 'Pages',
 
             isRouterAlive: true,
+            isRouterAliveCount:0
         }
     },
     computed: {
@@ -68,6 +69,7 @@ export default {
     },
     methods: {
         reload() {
+            this.isRouterAliveCount++
             this.isRouterAlive = false
             this.$nextTick(() => {
                 this.isRouterAlive = true

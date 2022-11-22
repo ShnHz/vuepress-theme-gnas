@@ -1,6 +1,6 @@
 module.exports = {
     title: "vuepress-theme-gnas",
-    dest: 'example/public',
+    dest: 'example/dist',
     plugins: {
         '@vuepress/back-to-top': true
     },
