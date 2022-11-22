@@ -234,6 +234,10 @@ $navbar-horizontal-padding = 1.5rem;
       }
     }
   }
+
+  .router-link-active{
+    border-bottom none !important;
+  }
 }
 
 @media (max-width: $MQMobile) {
