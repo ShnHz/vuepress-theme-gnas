@@ -10,7 +10,8 @@
                 <i class="gnas-i gnas-i-date" />
                 {{ $page.frontmatter.date }}
             </span>
-            <span v-if="$page.frontmatter.config && $page.frontmatter.config.tag && $page.frontmatter.config.tag.length > 0">
+            <span
+                v-if="$page.frontmatter.config && $page.frontmatter.config.tag && $page.frontmatter.config.tag.length > 0">
                 <i class="gnas-i gnas-i-file" />
                 {{ $tagFormat($page.frontmatter.config && $page.frontmatter.config.tag ||
                         []).map(item => item.name).join('，')
@@ -40,7 +41,7 @@ export default {
     },
     computed: {
         valineId() {
-            return this.$page.frontmatter.config && this.$page.frontmatter.config.valineId ? this.$page.frontmatter.config.valineId : window.location.pathname
+            return this.$page.frontmatter.config && this.$page.frontmatter.config.valineId ? this.$page.frontmatter.config.valineId : this.$page.regularPath
         }
     }
 }

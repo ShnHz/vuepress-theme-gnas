@@ -1,69 +1,36 @@
 <template>
     <CommonLayout :sidebarItems="sidebarItems" :shouldShowNavbar="shouldShowNavbar" v-if="isRouterAlive"
         :shouldShowSidebar="shouldShowSidebar" :bannerImg="bannerImg" @toggleSidebar="toggleSidebar">
-        <PageLock v-if="isLock" />
-        <PageHome v-else-if="$page.frontmatter.home" :bannerImg="bannerImg" />
-        <PageFriend v-else-if="$page.frontmatter.mode == 'friend'" />
-        <PageTag v-else-if="$page.frontmatter.mode == 'tag'" />
-        <PageArchives v-else-if="$page.frontmatter.mode == 'archives'" />
-        <Page :sidebar-items="sidebarItems" v-else />
 
-        <FirstLoading :bannerImg="bannerImg" v-if="$site.themeConfig.firstLoading != false" />
+        <ClientOnly>
+            <component :is="CLIENTONLY_Pages" :bannerImg="bannerImg" :sidebarItems="sidebarItems" />
+            <component :is="CLIENTONLY_FirstLoading" :bannerImg="bannerImg"
+                v-if="$site.themeConfig.firstLoading != false" />
+        </ClientOnly>
     </CommonLayout>
 </template>
 <script>
 import { resolveSidebarItems } from '../util'
 
 import CommonLayout from '@theme/layouts/CommonLayout.vue'
-import PageHome from '@theme/layouts/PageHome.vue'
-import PageFriend from '@theme/layouts/PageFriend.vue'
-import PageTag from '@theme/layouts/PageTag.vue'
-import PageArchives from '@theme/layouts/PageArchives.vue'
-import PageLock from '@theme/layouts/PageLock.vue'
-import Page from '@theme/layouts/Page.vue'
-
+import Pages from '@theme/layouts/Pages.vue'
 import FirstLoading from '@theme/components/FirstLoading.vue'
 
 export default {
     components: {
         CommonLayout,
-        PageHome,
-        PageFriend,
-        PageTag,
-        PageArchives,
-
-        Page,
-        PageLock,
-
-        FirstLoading
+        Pages,
+        FirstLoading,
     },
     data() {
         return {
-            isRouterAlive: true
+            CLIENTONLY_FirstLoading: 'FirstLoading',
+            CLIENTONLY_Pages: 'Pages',
+
+            isRouterAlive: true,
         }
     },
     computed: {
-        // 当前页面是否被加密
-        isLock() {
-            // 确保vue监听到数据使isLock变化
-            if (this.isRouterAlive) void (0)
-
-            // main
-            if (this.$page.frontmatter.password) {
-                if (this.isCommonPw) {
-                    return sessionStorage.getItem('gnasCommonLock') != 'unlock'
-                } else {
-                    return sessionStorage.getItem(`gnasPageLock-${this.$page.regularPath}`) != 'unlock'
-                }
-            }
-            return false
-        },
-        // 如果是加密页面，页面密码是否为通用密码
-        isCommonPw() {
-            let pagePw = this.$page.frontmatter.password
-            let commonPw = this.$site.themeConfig.password
-            return pagePw == true || pagePw == commonPw
-        },
         shouldShowNavbar() {
             const { themeConfig } = this.$site
             const { frontmatter } = this.$page
@@ -98,16 +65,6 @@ export default {
             let index = Math.floor(Math.random() * this.$site.themeConfig.home.bannerList.length)
             return this.$site.themeConfig.home.bannerList[index]
         }
-    },
-    watch: {
-        $route: {
-            handler: function (to, from) {
-            },
-            immediate: true,
-        },
-    },
-    mounted() {
-
     },
     methods: {
         reload() {

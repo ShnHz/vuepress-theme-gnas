@@ -29,7 +29,7 @@ export default {
       visitor: true,
       recordIP: true,
       meta: ['nick', 'mail'],
-      path: this.$page.frontmatter && this.$page.frontmatter.config && this.$page.frontmatter.config.valineId ? this.$page.frontmatter.config.valineId : window.location.pathname,
+      path: this.$page.frontmatter && this.$page.frontmatter.config && this.$page.frontmatter.config.valineId ? this.$page.frontmatter.config.valineId : this.$page.regularPath,
       ...this.$site.themeConfig.valine
     })
   }

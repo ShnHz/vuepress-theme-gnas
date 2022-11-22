@@ -5,8 +5,9 @@
       <p>该内容已被锁定，单击唤起输入密码面板</p>
       <p class="annotation">Ctrl + Enter 快捷键</p>
     </div>
-
-    <LockPasswordInput ref="lockPasswordInput" />
+    <ClientOnly>
+      <component :is="CLIENTONLY_LockPasswordInput" ref="lockPasswordInput" />
+    </ClientOnly>
   </div>
 </template>
 <script>
@@ -15,6 +16,11 @@ import LockPasswordInput from '@theme/components/LockPasswordInput'
 export default {
   components: {
     LockPasswordInput
+  },
+  data() {
+    return {
+      CLIENTONLY_LockPasswordInput: 'LockPasswordInput',
+    }
   },
   computed: {
     isGnasPage() {
