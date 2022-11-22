@@ -1,5 +1,5 @@
 {
-  "version": "1.1.1",
+  "version": "1.1.2",
   "name": "vuepress-theme-gnas",
   "author": "ShnHz",
   "keywords": [
@@ -16,7 +16,7 @@
   },
   "license": "MIT",
   "main": "index.js",
-  "devDependencies": {
+  "dependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.7",
     "@vuepress/plugin-nprogress": "^1.9.7",
     "async-validator": "^4.2.5",
