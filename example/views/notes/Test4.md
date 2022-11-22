@@ -1,5 +1,6 @@
 ---
 title: 测试分组
+password: true
 ---
 
 

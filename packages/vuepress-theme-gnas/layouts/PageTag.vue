@@ -2,8 +2,8 @@
     <div class="tag-wrap">
         <main>
             <div class="tag-list-wrap">
-                <Tag :key="`tag-${index}-${item.type}`"
-                    v-for="(item, index) in [{type:'all',name:'全部'},...$tagList]" :type="item.type" @click="tagClick" :effect="activeTag == item.type ? 'default' : 'plain'">
+                <Tag :key="`tag-${index}-${item.type}`" v-for="(item, index) in [{type:'all',name:'全部'},...$tagList]"
+                    :type="item.type" @click="tagClick" :effect="activeTag == item.type ? 'default' : 'plain'">
                     {{ item.name }}
                 </Tag>
             </div>
@@ -26,18 +26,18 @@ export default {
         }
     },
     computed: {
-        activeTag(){
+        activeTag() {
             return this.$route.query.type || 'all'
         }
     },
     mounted() {
     },
-    methods:{
-        tagClick(type,effect){
+    methods: {
+        tagClick(type, effect) {
             this.$router.push({
-                path:this.$route.path,
-                query:{
-                    type:type
+                path: this.$route.path,
+                query: {
+                    type: type
                 }
             })
         }
@@ -47,7 +47,7 @@ export default {
 <style lang="stylus" scoped>
 .tag-wrap {
     min-height: 100vh;
-    margin-top:3.6rem;
+    margin-top:$navbarHeight;
     
     main{
         width 740px;

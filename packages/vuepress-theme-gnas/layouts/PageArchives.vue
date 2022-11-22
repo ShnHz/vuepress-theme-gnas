@@ -47,10 +47,10 @@ export default {
             })
 
             return [
-                ...Array.from(map).filter(item =>{
+                ...Array.from(map).filter(item => {
                     return item[0] != 'Other'
                 }),
-                ...Array.from(map).filter(item =>{
+                ...Array.from(map).filter(item => {
                     return item[0] == 'Other'
                 }),
             ]
@@ -66,7 +66,7 @@ export default {
 <style lang="stylus" scoped>
 .archives-wrap {
     min-height: 100vh;
-    margin-top:3.6rem;
+    margin-top:$navbarHeight;
     main{
         width 1200px;
         margin 0 auto;

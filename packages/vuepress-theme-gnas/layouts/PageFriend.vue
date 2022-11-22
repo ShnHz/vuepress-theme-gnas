@@ -86,7 +86,7 @@ export default {
 <style lang="stylus" scoped>
 .friend-wrap {
     min-height: 100vh;
-    margin-top: 3.6rem;
+    margin-top: $navbarHeight;
     main {
         width: 740px;
         min-height: 1000px;
