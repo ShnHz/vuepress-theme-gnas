@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.9.7",
+    "@vuepress/plugin-nprogress": "^1.9.7",
     "async-validator": "^4.2.5",
     "element-ui": "^2.15.12",
     "js-md5": "^0.7.3",
