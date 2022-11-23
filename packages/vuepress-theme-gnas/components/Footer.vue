@@ -3,7 +3,8 @@
         <div :style="{ 'background-image': `url(${bannerImg})` }" class="bg">
         </div>
         <div class="footer-main-wrap">
-            <div class="copyright">©{{ $site.themeConfig.startYear }} - {{ thisYear }} By {{ $site.themeConfig.author }}
+            <div class="copyright">
+                ©{{ $site.themeConfig.startYear }} - {{ thisYear }} By {{ $site.themeConfig.author }}
             </div>
             <div class="framework-info">
                 <a href="https://vuepress.vuejs.org/zh/" rel="noopener" target="_blank">
@@ -13,6 +14,11 @@
                     <span>Vuepress-theme-gnas</span>
                 </a>
                 <a :href="$site.themeConfig.recordLink">{{ $site.themeConfig.record }}</a>
+                <span v-if="$site.themeConfig.valine.enable && $site.themeConfig.valine.globalAccess" id="/"
+                    class="leancloud_visitors">
+                    <i class="gnas-i gnas-i-eye" />
+                    <i class="leancloud-visitors-count"></i>
+                </span>
             </div>
         </div>
     </footer>
@@ -64,16 +70,22 @@ export default {
       color: #eee;
       text-align: center;
 
-      a{
+      >a,>span{
         margin:0 8px;
       }
+    }
+
+    .leancloud_visitors{
+        .leancloud-visitors-count{
+            font-style:normal;
+        }
     }
   }
 
 @media (max-width: $MQMobile) {
     .footer-wrap {
         .footer-main-wrap {
-            line-height:1.8;
+            line-height:2.2;
             text-align:left;
             a{
                 display:block;

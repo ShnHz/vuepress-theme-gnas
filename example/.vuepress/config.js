@@ -12,7 +12,7 @@ module.exports = {
             default: 'light'
         },
         // 锁定页面默认密码，请使用MD5，4位数MD5加密后的密码
-        password:'81dc9bdb52d04dc20036dbd8313ed055',
+        password: '81dc9bdb52d04dc20036dbd8313ed055',
         // 首屏加载动画
         firstLoading: true,
         // blog文章所在位置
@@ -26,7 +26,8 @@ module.exports = {
         valine: {
             enable: true,
             appId: 'xxx',
-            appKey: 'xxx'
+            appKey: 'xxx',
+            globalAccess: true
         },
 
         logo: '/img/logo.png',

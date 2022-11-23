@@ -69,6 +69,19 @@ export default {
         this.$router.afterEach(() => {
             this.isSidebarOpen = false
         })
+
+        if (this.$site.themeConfig.valine.enable && this.$site.themeConfig.valine.globalAccess) {
+            const Valine = require('valine')
+
+            new Valine({
+                placeholder: '',
+                visitor: true,
+                recordIP: true,
+                meta: ['nick', 'mail'],
+                path: '/',
+                ...this.$site.themeConfig.valine
+            })
+        }
     },
     methods: {
         toggleSidebar(to) {
