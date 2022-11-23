@@ -29,6 +29,7 @@ module.exports = {
             appKey: 'xxx',
             globalAccess: true
         },
+        notFoundPagePublicWelfare: false,
 
         logo: '/img/logo.png',
         home: {
