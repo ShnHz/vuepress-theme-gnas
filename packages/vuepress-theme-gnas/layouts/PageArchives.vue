@@ -1,5 +1,5 @@
 <template>
-    <div class="archives-wrap">
+    <div class="archives-wrap" :style="{ 'backgroundImage': $page.frontmatter.backgroundImage ? `url(${$page.frontmatter.backgroundImage})` : backgroundImage }">
         <main>
             <ul v-for="(value, key) in list" :key="`archives-blog-ul-${key}`">
                 <li class="lead">
@@ -26,7 +26,7 @@ export default {
     },
     data() {
         return {
-
+            backgroundImage: 'url(' + require('../svg/bg.svg') + ')',
         }
     },
     computed: {
@@ -67,6 +67,7 @@ export default {
 .archives-wrap {
     min-height: 100vh;
     margin-top:$navbarHeight;
+    background: transparent center center / cover no-repeat;
     main{
         width 1200px;
         margin 0 auto;
@@ -88,6 +89,7 @@ export default {
                 font-size: 1.1rem;
        
                 .date-wrap{
+                    padding-left 20px;
                     font-size: 90%;
                     .time-wrap{
                         color:#6c757d;
@@ -106,6 +108,7 @@ export default {
                 }
 
                 &:nth-child(even){
+                    border-radius:16px;
                     background-color: #fff
                     background-image: linear-gradient(to left, #fff, #fbfbfb, #fbfbfb, #fbfbfb, #fff);
                 }
@@ -118,7 +121,7 @@ export default {
                     border-radius: 50%;
                     width: 8px;
                     height: 8px;
-                    left: 9rem;
+                    left: 11rem;
                     margin-top 4px;
                     background-color: #c2c6cc;
                     box-shadow: 0 0 3px 0 #c2c6cc;
@@ -130,7 +133,7 @@ export default {
                     width: 4px;
                     height: 50px;
                     position: absolute;
-                    left: 9rem;
+                    left: 11rem;
                     top:-25px;
                     margin-left 2px
                     background-color: rgba(0,0,0,0.075);

@@ -29,6 +29,7 @@ module.exports = {
             appKey: 'xxx',
             globalAccess: true
         },
+        // 加入公益404计划，默认为true
         notFoundPagePublicWelfare: false,
 
         logo: '/img/logo.png',

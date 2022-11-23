@@ -1,8 +1,8 @@
 <template>
-    <div class="tag-wrap">
+    <div class="tag-wrap" :style="{ 'backgroundImage': $page.frontmatter.backgroundImage ? `url(${$page.frontmatter.backgroundImage})` : backgroundImage }">
         <main>
             <div class="tag-list-wrap">
-                <Tag :key="`tag-${index}-${item.type}`" v-for="(item, index) in [{type:'all',name:'全部'},...$tagList]"
+                <Tag :key="`tag-${index}-${item.type}`" v-for="(item, index) in [{ type: 'all', name: '全部' }, ...$tagList]"
                     :type="item.type" @click="tagClick" :effect="activeTag == item.type ? 'default' : 'plain'">
                     {{ item.name }}
                 </Tag>
@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-
+            backgroundImage: 'url(' + require('../svg/bg.svg') + ')',
         }
     },
     computed: {
@@ -48,7 +48,8 @@ export default {
 .tag-wrap {
     min-height: 100vh;
     margin-top:$navbarHeight;
-    
+    background: transparent center center / cover no-repeat;
+
     main{
         width 740px;
         position:relative;

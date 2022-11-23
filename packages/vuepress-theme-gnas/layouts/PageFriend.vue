@@ -1,5 +1,5 @@
 <template>
-    <div class="friend-wrap">
+    <div class="friend-wrap" :style="{ 'backgroundImage': $page.frontmatter.backgroundImage ? `url(${$page.frontmatter.backgroundImage})` : backgroundImage }">
         <main>
             <div class="rule-card">
                 <p style="font-size:20px;margin-bottom:30px">友链，申请规则</p>
@@ -68,7 +68,7 @@ export default {
     },
     data() {
         return {
-
+            backgroundImage: 'url(' + require('../svg/bg.svg') + ')',
         }
     },
     computed: {
@@ -87,6 +87,7 @@ export default {
 .friend-wrap {
     min-height: 100vh;
     margin-top: $navbarHeight;
+    background: transparent center center / cover no-repeat;
     main {
         width: 740px;
         min-height: 1000px;
