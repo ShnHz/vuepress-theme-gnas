@@ -1,5 +1,8 @@
 <template>
-    <div class="archives-wrap" :style="{ 'backgroundImage': $page.frontmatter.backgroundImage ? `url(${$page.frontmatter.backgroundImage})` : backgroundImage }">
+    <div class="archives-wrap">
+        <div :style="{ 'backgroundImage': $page.frontmatter.backgroundImage ? `url(${$page.frontmatter.backgroundImage})` : backgroundImage }"
+            class="bg-wrap">
+        </div>
         <main>
             <ul v-for="(value, key) in list" :key="`archives-blog-ul-${key}`">
                 <li class="lead">
@@ -67,7 +70,15 @@ export default {
 .archives-wrap {
     min-height: 100vh;
     margin-top:$navbarHeight;
-    background: transparent center center / cover no-repeat;
+    .bg-wrap{
+        width 100vw;
+        height 100vh;
+        position fixed;
+        top:0;
+        left:0;
+
+        background: transparent center center / cover no-repeat;
+    }
     main{
         width 1200px;
         margin 0 auto;
