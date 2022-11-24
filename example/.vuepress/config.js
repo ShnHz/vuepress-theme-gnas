@@ -31,6 +31,15 @@ module.exports = {
         },
         // 加入公益404计划，默认为true
         notFoundPagePublicWelfare: false,
+        // 音乐播放器
+        music: {
+            enable: true,
+            autoplay:false,
+            list: [{
+                name: 'Fine乐团_没有人不比我快乐',
+                href: '/music/Fine乐团_没有人不比我快乐.mp3'
+            }]
+        },
 
         logo: '/img/logo.png',
         home: {

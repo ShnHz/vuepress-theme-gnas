@@ -12,11 +12,18 @@
     <div :style="linksWrapMaxWidth ? {
       'max-width': linksWrapMaxWidth + 'px'
     } : {}" class="links">
-      <div @click="selectMode(currentMode == 'light' ? 'dark' : 'light')" class="color-button"
-        v-if="$site.themeConfig.themeMode.enable">
-        <i class="gnas-i gnas-i-yueliang" v-if="currentMode == 'light'"></i>
-        <i class="gnas-i gnas-i-taiyang" style="color:#fff" v-if="currentMode == 'dark'"></i>
-      </div>
+
+      <!-- 音乐播放器 -->
+      <ClientOnly
+        v-if="$site.themeConfig.music && $site.themeConfig.music.enable == true && $site.themeConfig.music.list && $site.themeConfig.music.list.length > 0">
+        <component is="NavbarMusicPlayer" />
+      </ClientOnly>
+
+      <!-- 黑夜模式 -->
+      <ClientOnly v-if="$site.themeConfig.themeMode.enable == true">
+        <component is="NavbarThemeMode" />
+      </ClientOnly>
+
       <AlgoliaSearchBox :options="algolia" v-if="isAlgoliaSearch" />
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
       <NavLinks class="can-hide" />
@@ -32,12 +39,14 @@ import SearchBox from '@SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 
+import NavbarMusicPlayer from '@theme/components/NavbarMusicPlayer.vue'
+import NavbarThemeMode from '@theme/components/NavbarThemeMode.vue'
+
 export default {
-  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox, NavbarMusicPlayer, NavbarThemeMode },
   data() {
     return {
       linksWrapMaxWidth: null,
-      currentMode: 'light',
 
       transparent: false,
       transparentEdit: false,
@@ -107,27 +116,7 @@ export default {
         _this.scrollTop = scrollTop
       }, 100)
     )
-
-    this.currentMode =
-      localStorage.getItem('themeMode') != null
-        ? localStorage.getItem('themeMode')
-        : this.$site.themeConfig.themeMode.default || 'light'
-    this.selectMode(this.currentMode)
   },
-  methods: {
-    selectMode(currentMode) {
-      this.currentMode = currentMode
-      localStorage.setItem('themeMode', currentMode)
-
-      if (currentMode == 'dark') {
-        document
-          .querySelectorAll('#app')[0]
-          .setAttribute('class', 'theme--dark')
-      } else {
-        document.querySelectorAll('#app')[0].setAttribute('class', '')
-      }
-    }
-  }
 }
 
 function css(el, property) {
@@ -211,27 +200,6 @@ $navbar-horizontal-padding = 1.5rem;
     .search-box {
       flex: 0 0 auto;
       vertical-align: top;
-    }
-
-    .color-button {
-      cursor: pointer;
-      height: 30px;
-      line-height: 31px;
-      min-width: 50px;
-      margin-top: 4px;
-      margin-right: 10px;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.54);
-      border-radius: 5px;
-      transition: all 0.5s ease;
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.05);
-      }
-
-      i {
-        font-size: 22px;
-      }
     }
   }
 

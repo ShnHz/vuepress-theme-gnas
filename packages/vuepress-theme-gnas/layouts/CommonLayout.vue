@@ -16,7 +16,7 @@ export default {
     components: {
         Navbar,
         Footer,
-        Sidebar
+        Sidebar,
     },
     props: {
         sidebarItems: {

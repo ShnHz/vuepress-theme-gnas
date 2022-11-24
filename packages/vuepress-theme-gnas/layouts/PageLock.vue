@@ -6,7 +6,7 @@
       <p class="annotation">Ctrl + Enter 快捷键</p>
     </div>
     <ClientOnly>
-      <component :is="CLIENTONLY_LockPasswordInput" ref="lockPasswordInput" />
+      <component is="LockPasswordInput" ref="lockPasswordInput" />
     </ClientOnly>
   </div>
 </template>
@@ -19,7 +19,6 @@ export default {
   },
   data() {
     return {
-      CLIENTONLY_LockPasswordInput: 'LockPasswordInput',
     }
   },
   computed: {

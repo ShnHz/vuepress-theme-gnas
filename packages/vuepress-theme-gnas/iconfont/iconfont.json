@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7275231",
+      "name": "Next track 2 (Filled",
+      "font_class": "music-next2",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "7275205",
+      "name": "Next track (Filled)",
+      "font_class": "music-next",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    },
+    {
+      "icon_id": "7275219",
+      "name": "Play (Filled)",
+      "font_class": "music-start",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "7275232",
+      "name": "Pause (Filled)",
+      "font_class": "music-pause",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "7275241",
+      "name": "Sound 2 (Filled)",
+      "font_class": "music-sound",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "7275243",
+      "name": "Sound No volume",
+      "font_class": "music-sound-null",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "21712628",
+      "name": "music",
+      "font_class": "music",
+      "unicode": "e6aa",
+      "unicode_decimal": 59050
+    },
+    {
       "icon_id": "4766694",
       "name": "unlock",
       "font_class": "unlock",

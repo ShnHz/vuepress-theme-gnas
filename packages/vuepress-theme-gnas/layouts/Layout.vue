@@ -3,8 +3,8 @@
         :shouldShowSidebar="shouldShowSidebar" :bannerImg="bannerImg" @toggleSidebar="toggleSidebar">
 
         <ClientOnly>
-            <component :is="CLIENTONLY_Pages" :bannerImg="bannerImg" :sidebarItems="sidebarItems" />
-            <component :is="CLIENTONLY_FirstLoading" :bannerImg="bannerImg"
+            <component is="Pages" :bannerImg="bannerImg" :sidebarItems="sidebarItems" />
+            <component is="FirstLoading" :bannerImg="bannerImg"
                 v-if="$site.themeConfig.firstLoading != false && isRouterAliveCount == 0" />
         </ClientOnly>
     </CommonLayout>
@@ -24,9 +24,6 @@ export default {
     },
     data() {
         return {
-            CLIENTONLY_FirstLoading: 'FirstLoading',
-            CLIENTONLY_Pages: 'Pages',
-
             isRouterAlive: true,
             isRouterAliveCount:0
         }
