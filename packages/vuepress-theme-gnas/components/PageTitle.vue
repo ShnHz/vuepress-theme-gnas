@@ -17,6 +17,10 @@
                         []).map(item => item.name).join('，')
                 }}
             </span>
+            <!-- <span class="valine-comment-wrap"
+                v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)">
+                <span class="valine-comment-count" :id="valineId"></span>
+            </span> -->
             <span
                 v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)"
                 :id="valineId" class="leancloud_visitors">

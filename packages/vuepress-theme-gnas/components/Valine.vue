@@ -16,10 +16,7 @@ export default {
   mounted() {
     // require window
     const Valine = require('valine')
-    if (typeof window !== 'undefined') {
-      this.window = window
-      window.AV = require('leancloud-storage')
-    }
+    
     new Valine({
       el: `#valine-wrap-${this.uuid}`,
       notify: false,

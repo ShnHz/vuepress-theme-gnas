@@ -91,6 +91,7 @@ export default {
     min-height: 100vh;
     margin-top: $navbarHeight;
     .bg-wrap{
+        z-index 0;
         width 100vw;
         height 100vh;
         position fixed;
@@ -135,10 +136,12 @@ export default {
         }
 
         .friend-card-wrap-box {
+            z-index 1
             min-height: 100px;
+            position relative;
+            margin: 12px 0;
             border-radius: 5px;
             overflow: hidden;
-            margin: 12px 0;
         }
 
         .friend-card-wrap {

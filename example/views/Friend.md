@@ -6,4 +6,7 @@ friendLink: [{
     "icon": "https://cdn.chenyingshuang.cn/index/avatar.jpg",
     "description": "说说我的生活"
 }]
+config: {
+    valineId: /Friend.html
+}
 ---

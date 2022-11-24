@@ -14,11 +14,11 @@
                     <span>Vuepress-theme-gnas</span>
                 </a>
                 <a :href="$site.themeConfig.recordLink">{{ $site.themeConfig.record }}</a>
-                <span v-if="$site.themeConfig.valine.enable && $site.themeConfig.valine.globalAccess" id="/"
+                <!-- <span v-if="$site.themeConfig.valine.globalAccess" id="/"
                     class="leancloud_visitors">
                     <i class="gnas-i gnas-i-eye" />
                     <i class="leancloud-visitors-count"></i>
-                </span>
+                </span> -->
             </div>
         </div>
     </footer>

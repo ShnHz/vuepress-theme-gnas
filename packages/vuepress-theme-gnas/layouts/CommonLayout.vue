@@ -71,16 +71,7 @@ export default {
         })
 
         if (this.$site.themeConfig.valine.enable && this.$site.themeConfig.valine.globalAccess) {
-            const Valine = require('valine')
-
-            new Valine({
-                placeholder: '',
-                visitor: true,
-                recordIP: true,
-                meta: ['nick', 'mail'],
-                path: '/',
-                ...this.$site.themeConfig.valine
-            })
+            this.addGlobalAccess()
         }
     },
     methods: {
@@ -109,6 +100,43 @@ export default {
                 }
             }
         },
+
+        // 记录全局访问量
+        addGlobalAccess(Counter, currPath = '/') {
+            // let lvs = Utils.findAll(document, '.leancloud_visitors,.leancloud-visitors');
+            // if (lvs.length) {
+            //     let lv = lvs[0];
+            //     let url = Utils.attr(lv, 'id');
+            //     let title = Utils.attr(lv, 'data-flag-title');
+            //     let xid = encodeURI(url);
+            //     let o = {
+            //         el: lv,
+            //         url: url,
+            //         xid: xid,
+            //         title: title
+            //     }
+            //     // 判断是否需要+1
+            //     if (decodeURI(url) === decodeURI(currPath)) {
+            //         let query = new AV.Query(Counter);
+            //         query.equalTo('url', url);
+            //         query.find().then(ret => {
+            //             if (ret.length > 0) {
+            //                 let v = ret[0];
+            //                 v.increment("time");
+            //                 v.save().then(rt => {
+            //                     Utils.find(lv, '.leancloud-visitors-count').innerText = rt.get('time')
+            //                 }).catch(ex => {
+            //                     console.log(ex)
+            //                 });
+            //             } else {
+            //                 createCounter(Counter, o)
+            //             }
+            //         }).catch(ex => {
+            //             ex.code == 101 && createCounter(Counter, o)
+            //         })
+            //     } else CounterFactory.show(Counter, lvs)
+            // }
+        }
     },
 }
 </script>
