@@ -56,11 +56,13 @@ export default {
             this.loading = false
         },
         prev() {
+            this.played = true
             this.active.index = this.active.index == 0 ? this.musicList.length - 1 : this.active.index - 1
             this.loading = true
             this.active.music = this.musicList[this.active.index]
         },
         next() {
+            this.played = true
             this.active.index = this.active.index == this.musicList.length - 1 ? 0 : this.active.index + 1
             this.loading = true
             this.active.music = this.musicList[this.active.index]
