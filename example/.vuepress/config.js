@@ -38,6 +38,10 @@ module.exports = {
             list: [{
                 name: 'Fine乐团_没有人不比我快乐',
                 href: '/music/Fine乐团_没有人不比我快乐.mp3'
+            },
+            {
+                name: 'Fine乐团_呼吸决定',
+                href: '/music/Fine乐团_呼吸决定.mp3'
             }]
         },
 

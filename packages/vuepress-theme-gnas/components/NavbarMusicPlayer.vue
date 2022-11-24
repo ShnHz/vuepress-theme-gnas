@@ -1,32 +1,21 @@
 <template>
     <div class="music-player-wrap">
-        <el-popover placement="top" width="248" v-model="visible" popper-class="music-player-popper">
-            <span class="btn-wrap" slot="reference">
+        <el-popover placement="top" width="324" v-model="visible" popper-class="music-player-popper">
+            <span class="btn-wrap" slot="reference" :class="{ 'rotate': playerStatus == 'played' }">
                 <i class="gnas-i gnas-i-music"></i>
             </span>
             <div class="player-wrap">
                 <div class="function-wrap">
-                    <i class="gnas-i gnas-i-music-next2 reversal"></i>
-                    <i :class="playerStatus == 'pause' ? 'gnas-i gnas-i-music-start' : 'gnas-i gnas-i-music-pause'"
-                        @click="playerStatus == 'pause' ? start() : pause()"></i>
-                    <i class="gnas-i gnas-i-music-next2"></i>
-                </div>
-
-                <div class="music-wrap">
+                    <i class="gnas-i gnas-i-music-next2 reversal" :class="{ 'disabled': musicList.length <= 1 }"
+                        @click="musicList.length > 1 && prev()"></i>
                     <p class="music-name">{{ active.music.name }}</p>
-                    <p class="slider-info-wrap">
-                        <span class="active-time">{{ active.currentTimeStr }}</span>
-                        <span class="all-time">{{ active.durationStr }}</span>
-                    </p>
-                    <p class="slider-wrap">
-                        <el-slider v-model="active.currentTime" :show-tooltip="false" :min="0" :max="active.duration"
-                            @change="sliderChange">
-                        </el-slider>
-                    </p>
+                    <i class="gnas-i gnas-i-music-next2" @click="musicList.length > 1 && next()"
+                        :class="{ 'disabled': musicList.length <= 1 }"></i>
                 </div>
+                <audio id="globalAudio" :src="active.music && active.music.href" type="audio/mp3" @canplay="canplay"
+                    :autoplay="autoplay" preload="meta" controls="controls" @ended="ended"
+                    @play="played = true; playerStatus = 'played'" @pause="playerStatus = 'pause'"></audio>
             </div>
-            <audio id="globalAudio" :src="active.music && active.music.href" type="audio/mp3" @timeupdate="updata"
-                @canplay="canplay" :autoplay="$site.themeConfig.music.autoplay" preload="meta"></audio>
         </el-popover>
     </div>
 </template>
@@ -34,17 +23,24 @@
 export default {
     data() {
         return {
-            visible: true,
+            visible: false,
             loading: true,
 
             playerStatus: 'pause',
             active: {
                 index: 0,
-                currentTime: 0,
-                duration: 0,
                 music: {}
             },
-            audio: null
+            audio: null,
+            played: null
+        }
+    },
+    computed: {
+        musicList() {
+            return this.$site.themeConfig.music.list
+        },
+        autoplay() {
+            return this.$site.themeConfig.music.autoplay || this.played
         }
     },
     mounted() {
@@ -52,39 +48,29 @@ export default {
     },
     methods: {
         init() {
-            this.active.music = this.$site.themeConfig.music.list[this.active.index]
+            this.loading = true
+            this.active.music = this.musicList[this.active.index]
         },
         canplay() {
             this.audio = document.getElementById("globalAudio");
-            this.active.currentTime = 0
-            this.active.currentTimeStr = '0:00'
-            this.active.duration = this.audio.duration
-            this.active.durationStr = this.formatTime(this.audio.duration)
-
             this.loading = false
         },
-        start() {
-            this.playerStatus = 'played'
-            this.audio.play()
+        prev() {
+            this.active.index = this.active.index == 0 ? this.musicList.length - 1 : this.active.index - 1
+            this.loading = true
+            this.active.music = this.musicList[this.active.index]
         },
-        pause() {
-            this.playerStatus = 'pause'
-            this.audio.pause()
+        next() {
+            this.active.index = this.active.index == this.musicList.length - 1 ? 0 : this.active.index + 1
+            this.loading = true
+            this.active.music = this.musicList[this.active.index]
         },
-        updata() {
-            this.active.currentTime = this.audio.currentTime
-            this.active.currentTimeStr = this.formatTime(this.audio.currentTime)
-        },
-
-        formatTime(time) {
-            let m = Math.round(time / 60)
-            let s = Math.round(time % 60)
-
-            return `${m}:${s < 10 ? '0' + s : s}`
-        },
-
-        sliderChange(time) {
-            console.log(time)
+        ended() {
+            if (this.musicList.length <= 1) {
+                this.init()
+            } else {
+                this.next()
+            }
         }
     }
 }
@@ -111,6 +97,20 @@ export default {
 
         i {
             font-size: 20px;
+            transition: all .4s;
+        }
+
+        &.rotate{
+            i{
+                color:$accentColor;
+                animation:rotate 8s infinite;
+            }
+        }
+
+        @keyframes rotate {
+            100%{
+                transform:rotate(360deg);
+            }
         }
     }
 }
@@ -127,9 +127,9 @@ export default {
         }
     }
     audio{
-        position :fixed;
-        top:-1000px;
-        opacity 0;
+        // position :fixed;
+        // top:-1000px;
+        // opacity 0;
     }
     .player-wrap{
         display flex;
@@ -148,51 +148,39 @@ export default {
                 &.reversal{
                     transform: rotate(180deg);
                 }
+                &.disabled{
+                    cursor : not-allowed
+                    color:rgba(255,255,255,.2)
+                }
                 &.gnas-i-music-next2{
                     margin -2px 10px 0;
                     font-size 20px;
                 }
             }
-        }
 
-        .music-wrap{
-            width 280px;
-            padding 0 36px;
-            text-align:center;
-            p{
-                line-height 1.2 !important;
-            }
             .music-name{
+                width 200px;
                 overflow: hidden; 
                 white-space: nowrap; 
                 text-overflow: ellipsis;
+                text-align:center;
                 color:#fff;
             }
-            .slider-info-wrap{
-                display flex
-                justify-content: space-between
-                width 100%;
-                margin-top 6px;
-            }
-            .slider-wrap{
-                .el-slider{
-                    .el-slider__runway{
-                        height 4px;
-                        margin: 6px 0;
-                        background-color:#555;
-                        .el-slider__bar{
-                            background-color:#fff;
-                        }
-                        .el-slider__button-wrapper{
-                            .el-slider__button{
-                                height 14px;
-                                width 14px;
-                                border none;
-                            }
-                        }
-                    }
-                }
-            }
+        }
+
+    }
+}
+
+@media screen  and (max-width: 340px){
+    .music-player-popper{
+        width 100vw !important;
+        left:0 !important;
+        border-radius:0 !important;
+        .popper__arrow{
+            display none;
+        }
+        audio{
+            width calc(100vw - 24px)
         }
     }
 }
