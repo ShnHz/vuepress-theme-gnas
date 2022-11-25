@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "30416",
+      "name": "comment",
+      "font_class": "comment",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
       "icon_id": "7275231",
       "name": "Next track 2 (Filled",
       "font_class": "music-next2",

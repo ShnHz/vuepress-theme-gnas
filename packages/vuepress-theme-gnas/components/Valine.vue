@@ -14,9 +14,8 @@ export default {
     }
   },
   mounted() {
-    // require window
-    const Valine = require('valine')
-    
+    const Valine = require('valine-gnas')
+
     new Valine({
       el: `#valine-wrap-${this.uuid}`,
       notify: false,

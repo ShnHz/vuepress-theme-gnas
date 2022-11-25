@@ -22,27 +22,30 @@ module.exports = {
             // 日期格式化
             dateFormat: 'MM dd,yyyy',
         },
+        // 全站访问量
+        globalAccess: true,
         // 评论系统 文档：https://valine.js.org/，支持valine所有配置
         valine: {
             enable: true,
-            appId: 'xxx',
-            appKey: 'xxx',
-            globalAccess: true
+            appId: '2MgoJb7PsBdDJavPcPPU3oO2-gzGzoHsz',
+            appKey: 'mF1z8VJ3jMiohj3Q2S4b7yB6',
         },
+
         // 加入公益404计划，默认为true
         notFoundPagePublicWelfare: false,
         // 音乐播放器
         music: {
             enable: true,
-            autoplay:false,
+            autoplay: false,
             list: [{
-                name: 'Fine乐团_没有人不比我快乐',
-                href: '/music/Fine乐团_没有人不比我快乐.mp3'
-            },
-            {
-                name: 'Fine乐团_呼吸决定',
-                href: '/music/Fine乐团_呼吸决定.mp3'
-            }]
+                    name: 'Fine乐团_没有人不比我快乐',
+                    href: '/music/Fine乐团_没有人不比我快乐.mp3'
+                },
+                {
+                    name: 'Fine乐团_呼吸决定',
+                    href: '/music/Fine乐团_呼吸决定.mp3'
+                }
+            ]
         },
 
         logo: '/img/logo.png',

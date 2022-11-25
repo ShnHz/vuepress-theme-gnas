@@ -17,10 +17,11 @@
                         []).map(item => item.name).join('，')
                 }}
             </span>
-            <!-- <span class="valine-comment-wrap"
+            <span class="leancloud_comments" :id="valineId"
                 v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)">
-                <span class="valine-comment-count" :id="valineId"></span>
-            </span> -->
+                <i class="gnas-i gnas-i-comment" />
+                <i class="valine-comment-count" :data-xid="valineId"></i>
+            </span>
             <span
                 v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)"
                 :id="valineId" class="leancloud_visitors">
@@ -88,6 +89,12 @@ export default {
                 font-style: normal;
             }
         }
+        .leancloud_comments{
+            .valine-comment-count{
+                font-style: normal;
+            }
+        }
+      
     }
 
     .page-summary{
