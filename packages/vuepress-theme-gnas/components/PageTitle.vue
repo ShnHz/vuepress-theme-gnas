@@ -8,7 +8,7 @@
         <div class="page-th-wrap">
             <span v-if="$page.frontmatter.date">
                 <i class="gnas-i gnas-i-date" />
-                {{ $page.frontmatter.date }}
+                {{ mixin_getDate($page.frontmatter.date,'yyyy-MM-dd hh:mm:ss') }}
             </span>
             <span
                 v-if="$page.frontmatter.config && $page.frontmatter.config.tag && $page.frontmatter.config.tag.length > 0">
