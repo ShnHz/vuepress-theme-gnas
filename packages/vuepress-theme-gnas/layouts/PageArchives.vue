@@ -81,9 +81,11 @@ export default {
     }
     main{
         width 1200px;
+        position: relative;
         margin 0 auto;
         padding: 30px 0;
-
+        background:rgba(255,255,255,0.8);
+        backdrop-filter: blur(20px);
         ul{
             margin-bottom 1rem
             &:first-child{
@@ -119,8 +121,6 @@ export default {
                 }
 
                 &:nth-child(even){
-                    border-radius:16px;
-                    background-color: #fff
                     background-image: linear-gradient(to left, #fff, #fbfbfb, #fbfbfb, #fbfbfb, #fff);
                 }
                 &::before{

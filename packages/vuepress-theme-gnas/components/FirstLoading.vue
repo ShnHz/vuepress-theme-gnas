@@ -20,7 +20,7 @@ export default {
     let _this = this
     setTimeout(() => {
       _this.visible = false
-    }, this.$site.themeConfig.firstLoadingDuration || 2000);
+    }, this.$site.themeConfig.firstLoadingDuration || 0);
   }
 };
 </script>
