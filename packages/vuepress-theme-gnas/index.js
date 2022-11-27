@@ -28,6 +28,12 @@ module.exports = (options, ctx) => ({
                     ...ctx.themeConfig.live2d
                 }
             }
-        ]
+        ],
+        // ['container', {
+        //     type: 'code',
+        //     before: info => `<code class="defalut">${info}`,
+        //     after: '</code>',
+        //     defaultTitle: ''
+        // }]
     ]
 })

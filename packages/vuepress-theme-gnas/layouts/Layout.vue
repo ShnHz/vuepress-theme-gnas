@@ -4,9 +4,11 @@
 
         <ClientOnly>
             <component is="Pages" :bannerImg="bannerImg" :sidebarItems="sidebarItems" />
-            <component is="FirstLoading" :bannerImg="bannerImg"
-                v-if="$site.themeConfig.firstLoading != false && isRouterAliveCount == 0" />
         </ClientOnly>
+
+        <FirstLoading :bannerImg="bannerImg"
+            v-if="$site.themeConfig.firstLoading != false && !isRouterAliveCount" />
+
     </CommonLayout>
 </template>
 <script>
@@ -25,7 +27,7 @@ export default {
     data() {
         return {
             isRouterAlive: true,
-            isRouterAliveCount:0
+            isRouterAliveCount: false
         }
     },
     computed: {
@@ -66,7 +68,7 @@ export default {
     },
     methods: {
         reload() {
-            this.isRouterAliveCount++
+            this.isRouterAliveCount = true
             this.isRouterAlive = false
             this.$nextTick(() => {
                 this.isRouterAlive = true

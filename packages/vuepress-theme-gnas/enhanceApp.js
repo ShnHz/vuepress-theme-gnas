@@ -3,8 +3,6 @@
  */
 import pageComponents from '@internal/page-components'
 
-import VueHighlightJS from 'vue-highlightjs'
-import 'highlight.js/styles/atom-one-dark.css'
 import './iconfont/iconfont.css'
 import './styles/font.css'
 
@@ -18,7 +16,6 @@ import dateMixin from '@theme/mixins/date'
 export default ({
     Vue,
 }) => {
-    Vue.use(VueHighlightJS)
     Vue.use(ElementUI);
 
     Vue.mixin(dataMixin)
