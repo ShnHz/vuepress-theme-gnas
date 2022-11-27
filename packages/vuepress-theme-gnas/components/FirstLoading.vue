@@ -10,9 +10,6 @@
 <script>
 export default {
   props: {
-    bannerImg: {
-      type: String
-    },
   },
   data() {
     return {
@@ -21,17 +18,9 @@ export default {
   },
   created() {
     let _this = this
-    let bg = new Image();
-    bg.onload = function () {
-      bg.onload = null;
-      _this.visible = false
-    }
-    bg.src = this.bannerImg;
-
     setTimeout(() => {
-      bg.onload = null;
       _this.visible = false
-    }, 2000);
+    }, this.$site.themeConfig.firstLoadingDuration || 2000);
   }
 };
 </script>

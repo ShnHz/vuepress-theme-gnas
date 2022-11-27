@@ -15,6 +15,7 @@ module.exports = {
         password: '81dc9bdb52d04dc20036dbd8313ed055',
         // 首屏加载动画
         firstLoading: true,
+        firstLoadingDuration: 2000,
         // blog文章所在位置
         blogBase: '/views/blog',
         // blogItem配置
