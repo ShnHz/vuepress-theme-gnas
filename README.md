@@ -11,7 +11,7 @@ This theme refers to [vuepress-theme-gnas1.x](https://github.com/vuepress-gnas/v
 **npm**
 
 ```bash
-npm install vuepress-theme-gnas
+npm i vuepress-theme-gnas
 ```
 
 **yarn**
