@@ -134,7 +134,11 @@ module.exports = {
         sidebar: [
             '/views/notes/Web',
             '/views/notes/Test3',
-            '/views/notes/Test4',
+            {
+              title:'Test4',
+              path:'/views/notes/Test4',
+              groupClass:true
+            },
             {
                 title: 'Group 1',
                 collapsable: false,
