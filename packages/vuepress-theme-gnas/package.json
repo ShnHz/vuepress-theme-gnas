@@ -1,5 +1,5 @@
 {
-  "version": "1.3.5",
+  "version": "1.3.6",
   "name": "vuepress-theme-gnas",
   "author": "ShnHz",
   "keywords": [
@@ -23,7 +23,7 @@
     "element-ui": "^2.15.12",
     "js-md5": "^0.7.3",
     "loadsh": "^0.0.4",
-    "valine-gnas": "^1.0.1",
+    "valine-gnas": "^1.0.2",
     "vuepress": "^1.9.7",
     "vuepress-plugin-helper-live2d": "^1.0.2"
   }
