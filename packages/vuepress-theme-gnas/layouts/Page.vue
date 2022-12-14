@@ -5,7 +5,7 @@
 
       <PageTitle v-if="$page.frontmatter.title != false" />
 
-      <Content class="theme-default-content" />
+      <Content class="theme-default-content" v-viewer/>
 
       <Valine v-if="$site.themeConfig.valine.enable && ($page.frontmatter.config && $page.frontmatter.config.valine)" />
 

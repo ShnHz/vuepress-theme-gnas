@@ -10,6 +10,10 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import './styles/element-variables.styl'
 
+import VueViewer from 'v-viewer'
+import 'viewerjs/dist/viewer.css'
+
+
 import dataMixin from '@theme/mixins/data'
 import dateMixin from '@theme/mixins/date'
 
@@ -17,6 +21,7 @@ export default ({
     Vue,
 }) => {
     Vue.use(ElementUI);
+    Vue.use(VueViewer);
 
     Vue.mixin(dataMixin)
     Vue.mixin(dateMixin)
