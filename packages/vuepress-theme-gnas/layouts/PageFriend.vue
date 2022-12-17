@@ -4,26 +4,7 @@
             class="bg-wrap">
         </div>
         <main>
-            <div class="rule-card">
-                <p style="font-size:20px;margin-bottom:30px">友链，申请规则</p>
-
-                <p>
-                    如果要和本站交换友链，请按照以下格式发送到
-                    <a href="mailto:664652740@qq.com">664652740@qq.com</a>，或在下方留言区留言
-                </p>
-
-                <p>如果我没有回复的话，可以直接滴滴QQ，一般都是我没看见</p>
-
-                <div class="format-wrap">
-                    <p>名字： 野宁新之助</p>
-                    <p>
-                        地址：
-                        <a href="https://www.sanghangning.cn">https://www.sanghangning.cn</a>
-                    </p>
-                    <p>描述： 说说我的生活</p>
-                    <p>头像： https://cdn.chenyingshuang.cn/index/avatar.jpg</p>
-                </div>
-            </div>
+            <div class="rule-card" v-html="$page.frontmatter.header || defaultRuleText"></div>
             <div class="friend-card-wrap-box">
                 <div class="friend-card-wrap">
                     <div :key="item.href + item.icon" @click="localhref(item.href)" class="friend-card"
@@ -75,7 +56,18 @@ export default {
         }
     },
     computed: {
-
+        defaultRuleText(){
+            return `
+                <p style="font-size:20px;margin-bottom:30px">友链，申请规则</p>
+                <p>
+                    <b>header.md</b>内可以配置<b>header</b>字段，传入html代码
+                </p>
+                <p>
+                    如果要和本站交换友链，请按照以下格式发送到
+                    <a href="mailto:xxxxxxx@qq.com">xxxxxxx@qq.com</a>，或在下方留言区留言
+                </p>
+            `
+        }
     },
     mounted() {
     },
@@ -126,12 +118,14 @@ export default {
             font-size: 0.875rem;
             color: rgba(0, 0, 0, 0.87);
 
-            .format-wrap {
-                margin-top: 20px;
-                padding: 10px;
-                line-height: 3;
-                border-radius: 5px;
-                border: 1px dashed #bbb;
+            ::v-deep {
+                >div {
+                    margin-top: 20px;
+                    padding: 10px;
+                    line-height: 3;
+                    border-radius: 5px;
+                    border: 1px dashed #bbb;
+                }
             }
         }
 
