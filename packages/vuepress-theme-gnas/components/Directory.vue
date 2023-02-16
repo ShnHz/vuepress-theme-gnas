@@ -9,9 +9,11 @@
         </li>
       </ul>
     </div>
-  </div>
+</div>
 </template>
 <script>
+
+
 export default {
   data() {
     return {
@@ -35,8 +37,6 @@ export default {
 
       href = href.split('#')[1].toLowerCase()
       window.scrollTo({
-        // 通过offsetYop获取元素位置
-        // -100是为了避免它直接滑动到屏幕顶部，怪丑的
         top: document.getElementById(href).offsetTop - 100,
         behavior: 'smooth', // 平滑滚动
       })
@@ -45,6 +45,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+
 .directory-wrap {
   position: sticky;
   top: 7.6rem;
@@ -128,5 +129,11 @@ export default {
       overflow: hidden;
     }
   }
+}
+
+@media screen  and (max-width: 720px){
+    .directory-wrap{
+      display none
+    }
 }
 </style>
