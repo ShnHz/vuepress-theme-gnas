@@ -1,7 +1,7 @@
 <template>
     <div class="theme-container" :class="pageClasses" @touchend="onTouchEnd" @touchstart="onTouchStart">
         <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
-        <Sidebar v-if="shouldShowSidebar" :items="sidebarItems" @toggle-sidebar="toggleSidebar" />
+        <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar" />
         <slot>
         </slot>
         <Footer :bannerImg="bannerImg" />

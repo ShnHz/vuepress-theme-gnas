@@ -6,10 +6,9 @@
             <component is="Pages" :bannerImg="bannerImg" :sidebarItems="sidebarItems" />
         </ClientOnly>
 
-        <FirstLoading :bannerImg="bannerImg"
-            v-if="$site.themeConfig.firstLoading != false && !isRouterAliveCount" />
+        <FirstLoading :bannerImg="bannerImg" v-if="$site.themeConfig.firstLoading != false && !isRouterAliveCount" />
 
-    </CommonLayout>
+</CommonLayout>
 </template>
 <script>
 import { resolveSidebarItems } from '../util'
@@ -51,7 +50,7 @@ export default {
                 !frontmatter.home &&
                 frontmatter.sidebar !== false &&
                 this.sidebarItems.length && !['friend', 'tag', 'archives'].includes(frontmatter.mode) && !this.$page.regularPath.includes(this.$site.themeConfig.blogBase)
-            ) || document.body.clientWidth < 720
+            )
         },
         sidebarItems() {
             return resolveSidebarItems(
